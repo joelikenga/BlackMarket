@@ -1,4 +1,4 @@
-import {ArrowRight, CaretDown, Cart, Signout, Signin, UserIcon} from "../../public/svgIcons";
+import {ArrowRight, Cart, Signout, Signin, UserIcon} from "../../public/svgIcons";
 
 export  const SearchSection = () => {
   return(
