@@ -11,7 +11,7 @@ export  const GridCategories = () => {
   return(
       <main className={"m-6"}>
          <div className={"flex justify-start mb-3"}>
-              <p className={" border-x-4 border-my_yellow px-2 py-1 text-xl font-normal"}>Frequently <span className={"text-2xl font-medium"}>Searched</span></p>
+              <p className={" border-x-4 border-my_yellow px-2 py-1 text-xl font-normal"}>Frequent <span className={"text-2xl font-medium"}>Searches</span></p>
          </div>
 
           <div className={"grid grid-cols-8 gap-3"}>
@@ -33,6 +33,8 @@ export  const GridCategories = () => {
                   ))
               }
           </div>
+
+
       </main>
   )
 }

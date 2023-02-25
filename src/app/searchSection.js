@@ -1,4 +1,4 @@
-import {ArrowRight,CaretDown,Cart,Signout,Signin} from "../../public/svgIcons";
+import {ArrowRight, CaretDown, Cart, Signout, Signin, UserIcon} from "../../public/svgIcons";
 
 export  const SearchSection = () => {
   return(
@@ -6,8 +6,23 @@ export  const SearchSection = () => {
            {/*search input*/}
           <div className={" rounded flex justify-between"}>
 
+            {/*  logo name*/}
+            <div className={"my-2 w-fit block xl:hidden lg:"}>
+                <div
+                    className={"flex justify-between block xl:hidden"}>
+                    <h3 className={"text-xl font-extrabold text-center"}>BlackMarket</h3>
+                </div>
+
+            </div>
+
+
             <div className={"flex bg-my_light bg-my_dark rounded p-2"}>
-                <input type={"text"} className={"w-[45vw] ml-3 bg-my_light bg-my_dark outline-0 font-medium text-my_dark_2"} placeholder={"What do you want..."}/>
+                <input
+                    type={"text"}
+                    placeholder={"What do you want..."}
+                    className={
+                    " w-[ ml-3 bg-my_light bg-my_dark outline-0 font-medium text-my_dark_2 sm:min-w-fit md:min-w-fit lg:min-w-[44vw]"
+                }/>
 
                 <div className={"text-2xl mr-2 bg-my_dark_2 text-my_yellow px-4 py-1 rounded cursor-pointer"}>
                     <ArrowRight className={"font-black"}/>
@@ -18,13 +33,24 @@ export  const SearchSection = () => {
             {/*  cart and login*/}
             <div className={" inline-flex text-my_dark_2 mt-2"}>
 
-                <div className={"text-4xl mt-1 mr-3 justify-between flex"}>
+                <div className={
+                    "text-4xl mt-1 mr-3 justify-between flex hidden " +
+                    "xl:block " +
+                    "lg: "
+                }>
                     <Cart className={"cursor-pointer"}/>
                 </div>
 
-                <div className={"inline-block font-medium text-sm mt-1"}>
+                <div
+                    className={
+                    "inline-block font-medium text-sm mt-1 hidden md:block"}>
                     <button className={"px-3 py-2 bg-my_yellow text-my_dark_2 mx-2 rounded inline-flex"}> <Signin className={"text-xl"}/> login</button>
                     <button className={"px-3 py-2 bg-my_dark_2 text-my_yellow ml-1 rounded inline-flex"}> <Signout className={"text-xl"}/> Signup</button>
+                </div>
+
+                {/*small screen account profile button*/}
+                <div className={"block md:hidden"}>
+                    <button className={" px-2 py-2 bg-my_dark_2 text-my_yellow ml-1 rounded-full inline-flex "}> <UserIcon className={"text-2xl"}/></button>
                 </div>
             </div>
 

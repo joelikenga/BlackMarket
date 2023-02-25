@@ -6,7 +6,6 @@ export const Navigation = () => {
 
     // navigation links
     const navLinks = [
-        {link: "",icon:<Percent />,navName:"Best Offers"},
         {link: "",icon:<Cart />,navName:"Shop"},
         {link: "",icon:<Market />,navName:"Sell Products"},
         {link: "",icon:<Delivery />,navName:"Track Order"},
@@ -14,7 +13,11 @@ export const Navigation = () => {
     ];
 
     return(
-        <main className={"p-4 relative bg-my_ w-[25%]"}>
+        <main className={
+            "p-4 relative bg-my_ w-[25%] hidden" +
+            " xl:block"
+        }>
+
             {/*logo and language*/}
             <div className={" my-3 w-[auto]"}>
                 <div className={"flex justify-between"}>

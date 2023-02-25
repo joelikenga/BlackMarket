@@ -12,7 +12,8 @@ export  const FooterContent = () => {
     ];
 
     return(
-    <main className={"fixed bottom-6 mx-auto rounded w-[30rem] grid grid-col-5  bg-my_dark_2"}>
+    <main className={
+        "bottom-6 mx-auto rounded w-[30rem] grid grid-col-5  bg-my_dark_2 block xl: hidden"}>
         <div className={"flex justify-between m-5"}>
             {
                 footerLinks.map((links,index)=>(
