@@ -2,13 +2,13 @@ import {ArrowRight, Cart, Signout, Signin, UserIcon, Bar} from "../../public/svg
 
 export  const SearchSection = () => {
   return(
-      <main className={"sticky top-0 bg-[rgba(16,24,32,0.5)] py-4 px-6 z-50"}>
+      <main className={"sticky top-0 bg-[rgba(16,24,32,0.5)] py-2 sm:py-4 px-6 z-50"}>
 
            {/*search input*/}
-          <div className={" rounded flex justify-between"}>
+          <div className={" rounded flex justify-between items-center"}>
 
             {/*  sidebar*/}
-              <div className={"text-2xl text-my_dark_2 text-my_dark_2 mt-2 items-center block sm:hidden"}>
+              <div className={"text-2xl text-my_dark_2 text-my_dark_2 items-center block sm:hidden"}>
                   <Bar className={""}/>
               </div>
 
@@ -26,10 +26,10 @@ export  const SearchSection = () => {
                 <input
                     type={"text"}
                     placeholder={"What do you want..."}
-                    className={" h-[2rem] w-[fit-content] ml-3 bg-my_light bg-my_dark outline-0 font-medium text-my_dark_2  sm:min-w-fit md:min-w-fit lg:min-w-[44vw]"}
+                    className={" h-[2rem] w-[28vw] ml-3 bg-my_light bg-my_dark outline-0 font-medium text-my_dark_2 text-sm sm:min-w-[36vw] md:w-fit md:text-xl lg:w-[44vw]"}
                 />
 
-                <button className={" text-2xl mr-2 bg-my_dark_2 text-my_yellow px-4  rounded cursor-pointer"}>
+                <button className={"text-xl px-2 mr-1 bg-my_dark_2 text-my_yellow rounded cursor-pointer sm:px-4 sm:text-2xl"}>
                     <ArrowRight className={""}/>
                 </button>
 
