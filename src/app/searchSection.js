@@ -26,7 +26,7 @@ export  const SearchSection = () => {
                 <input
                     type={"text"}
                     placeholder={"What do you want..."}
-                    className={" h-[2rem] w-[28vw] ml-3 bg-my_light bg-my_dark outline-0 font-medium text-my_dark_2 text-sm sm:min-w-[36vw] md:w-fit md:text-xl lg:w-[44vw]"}
+                    className={" h-[2rem] w-[38vw] ml-3 bg-my_light bg-my_dark outline-0 font-medium text-my_dark_2 text-sm sm:min-w-[36vw] md:w-fit md:text-xl lg:w-[44vw]"}
                 />
 
                 <button className={"text-xl px-2 mr-1 bg-my_dark_2 text-my_yellow rounded cursor-pointer sm:px-4 sm:text-2xl"}>
