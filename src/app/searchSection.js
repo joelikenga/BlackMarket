@@ -2,7 +2,7 @@ import {ArrowRight, Cart, Signout, Signin, UserIcon, Bar} from "../../public/svg
 
 export  const SearchSection = () => {
   return(
-      <main className={"sticky top-0 bg-[rgba(16,24,32,0.5)] px-3 py-1 sm:py-4 sm:px-6 z-50"}>
+      <main className={"sticky top-0 bg-[rgba(16,24,32,0.5)] px-4 py-1 sm:py-4 sm:px-6 z-50"}>
 
            {/*search input*/}
           <div className={" rounded flex justify-between items-center"}>
@@ -55,7 +55,7 @@ export  const SearchSection = () => {
 
                 {/*small screen account profile button*/}
                 <div className={"block md:hidden"}>
-                    <button className={" bg-my_dark_2 text-my_yellow rounded-full inline-flex "}> <UserIcon className={"text-xl m-1"}/></button>
+                    <button className={" bg-my_dark_2 text-my_yellow rounded-full inline-flex mb-1"}> <UserIcon className={"text-xl m-2"}/></button>
                 </div>
             </div>
 
