@@ -8,7 +8,7 @@ export  const SearchSection = () => {
           <div className={" rounded flex justify-between"}>
 
             {/*  sidebar*/}
-              <div className={"text-3xl text-my_dark_2 text-my_dark_2 mt-2 items-center block sm:hidden"}>
+              <div className={"text-2xl text-my_dark_2 text-my_dark_2 mt-2 items-center block sm:hidden"}>
                   <Bar className={""}/>
               </div>
 
@@ -21,17 +21,17 @@ export  const SearchSection = () => {
             </div>
 
 
-            <div className={"flex bg-my_light bg-my_dark rounded p-2 "}>
+            <div className={"h-fit flex bg-my_light bg-my_dark rounded p-1 md:p-2 "}>
 
                 <input
                     type={"text"}
                     placeholder={"What do you want..."}
-                    className={" ml-3 bg-my_light bg-my_dark outline-0 font-medium text-my_dark_2  sm:min-w-fit md:min-w-fit lg:min-w-[44vw]"}
+                    className={" h-[2rem] w-[fit-content] ml-3 bg-my_light bg-my_dark outline-0 font-medium text-my_dark_2  sm:min-w-fit md:min-w-fit lg:min-w-[44vw]"}
                 />
 
-                <div className={"text-2xl mr-2 bg-my_dark_2 text-my_yellow px-4 py-1 rounded cursor-pointer"}>
-                    <ArrowRight className={"font-black"}/>
-                </div>
+                <button className={" text-2xl mr-2 bg-my_dark_2 text-my_yellow px-4  rounded cursor-pointer"}>
+                    <ArrowRight className={""}/>
+                </button>
 
             </div>
 
