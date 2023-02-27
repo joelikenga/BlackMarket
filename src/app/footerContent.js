@@ -2,29 +2,20 @@ import {Cart, Delivery, Headset, HomeIcon, Market, } from "../../public/svgIcons
 import Link from "next/link";
 
 export  const FooterContent = () => {
-    //
-    // const footerLinks = [
-    //     {link: "",icon:<HomeIcon />,navName:"Best Offers"},
-    //     {link: "",icon:<Market />,navName:"Sell Products"},
-    //     {link: "",icon:<Cart />,navName:"Shop"},
-    //     {link: "",icon:<Delivery />,navName:"Track Order"},
-    //     {link: "",icon:<Headset />,navName:"Feedback"},
-    // ];
-
     return(
-    <main className={"bottom-0 mx-auto rounded-t w-full sticky z-10 relative  sm:bottom-2"}>
+    <main className={"bottom-0 m-0 rounded-t w-full sticky z-10 relative  sm:bottom-2"}>
 
         <div className={"bg-my_dark_2 sm:absolute sm:left-[50%] sm:translate-x-[-50%] sm:translate-y-[-50%] sm:w-[50vw] sm:rounded  md:text-2xl  xl:hidden"}>
             <div className={"flex justify-around items-center py-1 my-1 text-2xl relative capitalize text-center"}>
 
-                        <div className={" text-my_dark"}>
+                        <div className={" text-my_dark mx-3"}>
                             <Link  className={""} title={""} href={""}>
                                 <HomeIcon />
                                 <p className={"text-[0.6rem] leading-5"}>Home</p>
                             </Link>
                         </div>
 
-                        <div className={" text-my_dark"}>
+                        <div className={" text-my_dark mx-3"}>
                             <Link title={""} href={""}>
                                 <Market />
                                 <p className={"text-[0.6rem] leading-5"}>Shop</p>
@@ -41,7 +32,7 @@ export  const FooterContent = () => {
                             </Link>
                         </div>
 
-                        <div className={" text-my_dark"}>
+                        <div className={" text-my_dark mx-3"}>
                             <Link title={""} href={""}>
                                 <Delivery />
                                 <p className={"text-[0.6rem] leading-5"}>order</p>
@@ -49,10 +40,10 @@ export  const FooterContent = () => {
                             </Link>
                         </div>
 
-                        <div className={" text-my_dark"}>
+                        <div className={" text-my_dark mx-3"}>
                             <Link className={""} title={""} href={""}>
                                 <Headset />
-                                <p className={"text-[0.6rem] m-0 leading-5"}>feedback</p>
+                                <p className={"text-[0.6rem] m-0 leading-5"}>feeds</p>
                             </Link>
                         </div>
             </div>
