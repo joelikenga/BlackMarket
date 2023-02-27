@@ -1,6 +1,6 @@
 "use client"
 
-import {ArrowRight, Cart, Signout, Signin, UserIcon, Bar} from "../../public/svgIcons";
+import {ArrowRight, Cart, Signout, Signin, UserIcon, Bar, Times} from "../../public/svgIcons";
 import Link from "next/link";
 import {useState} from "react";
 
@@ -24,8 +24,8 @@ export  const SearchSection = () => {
                 {/*  sidebar*/}
               <div
                   onClick={()=>{sidebarClick()}}
-                  className={"text-2xl text-my_dark_2 text-my_dark_2 items-center block sm:hidden"}>
-                    <Bar className={""}/>
+                  className={"z-[25] text-2xl text-my_dark_2 text-my_dark_2 items-center block sm:hidden"}>
+                  {sidebar ? <Times className={"p-1 text-3xl rounded-full bg-my_dark_2 text-my_yellow "}/> : <Bar className={""}/>}
 
               </div>
 
@@ -36,10 +36,6 @@ export  const SearchSection = () => {
 
                   {/*logo*/}
                   <div className={"bg-my_light h-full w-fit p-3"}>
-
-                      <div className={""}>
-                          <h3 className={"text-xl font-extrabold text-start"}>BlackMarket</h3>
-                      </div>
 
                       {/*category contents*/}
                       <div className={"overflow-y-scroll w-[13rem]"}>
