@@ -3,26 +3,42 @@ import Link from "next/link";
 
 export  const SearchSection = () => {
   return(
-      <main className={"sticky top-0 bg-[rgba(16,24,32,0.5)] px-4 py-1 sm:py-4 sm:px-6 z-50"}>
+      <main className={"text-my_dark_2 sticky top-0 bg-[rgba(16,24,32,0.5)] px-4 py-1 sm:py-4 sm:px-6 z-50"}>
+
 
            {/*search input*/}
           <div className={" rounded flex justify-between items-center"}>
 
-            {/*  sidebar*/}
+                {/*  sidebar*/}
               <div className={"text-2xl text-my_dark_2 text-my_dark_2 items-center block sm:hidden"}>
                   <Bar className={""}/>
 
-              {/*    small screen sidebar contents*/}
-                  <div className={"absolute top-0 left-0 z-20 w-[100vw] h-[100vh] bg-[rgba(0,0,0,0.5)]"}>
+                    {/*    small screen sidebar contents*/}
+                  <div className={"hidden absolute flex top-0 left-0 z-20 w-[100vw] h-[100vh] bg-[rgba(0,0,0,0.5)]"}>
 
                         {/*logo*/}
                         <div className={"bg-my_light h-full w-fit p-3"}>
-                                <div className={""}>
-                                    <h3 className={"text-xl font-extrabold text-center"}>BlackMarket</h3>
-                                </div>
+
+                            <div className={""}>
+                                <h3 className={"text-xl font-extrabold text-start"}>BlackMarket</h3>
+                            </div>
+
+                            {/*category contents*/}
+                            <div className={"overflow-y-scroll w-[13rem]"}>
+
+                            </div>
+
                         </div>
+
+                          {/*close button */}
+                        <div>
+
+                        </div>
+
                   </div>
               </div>
+
+
 
 
             {/*  logo name*/}
@@ -47,16 +63,15 @@ export  const SearchSection = () => {
 
             </div>
 
+
+
             {/*  cart and login*/}
             <div className={" inline-flex text-my_dark_2 mt-2"}>
 
-                <div className={
-                    "text-4xl mt-1 mr-3 justify-between flex hidden " +
-                    "xl:block " +
-                    "lg: "
-                }>
+                <div className={"text-4xl mt-1 mr-3 justify-between flex hidden xl:block lg: "}>
                     <Cart className={"cursor-pointer"}/>
                 </div>
+
 
                 <div
                     className={"inline-block font-medium text-sm mt-1 hidden md:block"}>
@@ -64,12 +79,14 @@ export  const SearchSection = () => {
                     <button className={"px-3 py-2 bg-my_dark_2 text-my_yellow ml-1 rounded inline-flex"}> <Signout className={"text-xl"}/> Signup</button>
                 </div>
 
+
                 {/*small screen account profile button*/}
                 <div className={"block relative md:hidden"}>
+
                     <button className={" bg-my_dark_2 text-my_yellow rounded-full inline-flex mb-1"}> <UserIcon className={"text-xl m-2"}/></button>
 
                     {/*small screen user profile content*/}
-                    <div className={"absolute right-0 top-10 p-3 rounded w-[13rem] bg-my_dark h-fit"}>
+                    <div className={"hidden absolute right-0 top-10 p-3 rounded w-[13rem] bg-my_dark h-fit"}>
 
                         <div className={"flex justify-between font-normal text-[0.8rem]"}>
                             <Link href={""} className={"px-2 py-1 bg-my_yellow text-my_dark_2 mx-2 rounded inline-flex"}><Signin className={" text-sm mt-[.1rem] mr-[.1rem]"}/>login</Link>
@@ -79,6 +96,7 @@ export  const SearchSection = () => {
                     </div>
 
                 </div>
+
             </div>
 
           </div>
