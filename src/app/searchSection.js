@@ -1,4 +1,5 @@
 import {ArrowRight, Cart, Signout, Signin, UserIcon, Bar} from "../../public/svgIcons";
+import Link from "next/link";
 
 export  const SearchSection = () => {
   return(
@@ -47,15 +48,25 @@ export  const SearchSection = () => {
                 </div>
 
                 <div
-                    className={
-                    "inline-block font-medium text-sm mt-1 hidden md:block"}>
+                    className={"inline-block font-medium text-sm mt-1 hidden md:block"}>
                     <button className={"px-3 py-2 bg-my_yellow text-my_dark_2 mx-2 rounded inline-flex"}> <Signin className={"text-xl"}/> login</button>
                     <button className={"px-3 py-2 bg-my_dark_2 text-my_yellow ml-1 rounded inline-flex"}> <Signout className={"text-xl"}/> Signup</button>
                 </div>
 
                 {/*small screen account profile button*/}
-                <div className={"block md:hidden"}>
+                <div className={"block relative md:hidden"}>
                     <button className={" bg-my_dark_2 text-my_yellow rounded-full inline-flex mb-1"}> <UserIcon className={"text-xl m-2"}/></button>
+
+                    {/*small screen user profile content*/}
+                    <div className={"absolute right-0 top-10 p-3 rounded w-[12rem] bg-my_dark h-fit"}>
+
+                        <div className={"flex justify-between font-normal text-[0.8rem]"}>
+                            <Link href={""} className={"px-2 py-1 bg-my_yellow text-my_dark_2 mx-2 rounded inline-flex"}><Signin className={" text-sm mr-1"}/>login</Link>
+                            <Link href={""} className={"px-2 py-1 bg-my_dark_2 text-my_yellow ml-1 rounded inline-flex"}><Signout className={"text-sm mr-1"}/> Signup</Link>
+                        </div>
+
+                    </div>
+
                 </div>
             </div>
 
