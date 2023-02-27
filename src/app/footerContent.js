@@ -2,28 +2,60 @@ import {Cart, Delivery, Headset, HomeIcon, Market, } from "../../public/svgIcons
 import Link from "next/link";
 
 export  const FooterContent = () => {
-
-        const footerLinks = [
-        {link: "",icon:<HomeIcon />,navName:"Best Offers"},
-        {link: "",icon:<Cart />,navName:"Shop"},
-        {link: "",icon:<Market />,navName:"Sell Products"},
-        {link: "",icon:<Delivery />,navName:"Track Order"},
-        {link: "",icon:<Headset />,navName:"Feedback"},
-    ];
+    //
+    // const footerLinks = [
+    //     {link: "",icon:<HomeIcon />,navName:"Best Offers"},
+    //     {link: "",icon:<Market />,navName:"Sell Products"},
+    //     {link: "",icon:<Cart />,navName:"Shop"},
+    //     {link: "",icon:<Delivery />,navName:"Track Order"},
+    //     {link: "",icon:<Headset />,navName:"Feedback"},
+    // ];
 
     return(
-    <main className={
-        "bottom-6 mx-auto rounded w-[30rem] grid grid-col-5  bg-my_dark_2 block xl: hidden"}>
-        <div className={"flex justify-between m-5"}>
-            {
-                footerLinks.map((links,index)=>(
-                    <div key={index} className={"text-my_dark text-3xl"}>
-                        <Link title={""} href={""}>
-                            {links.icon}
-                        </Link>
-                    </div>
-                ))
-            }
+    <main className={"bottom-0 mx-auto rounded-t w-full sticky z-10 relative  sm:bottom-2"}>
+
+        <div className={"bg-my_dark_2 sm:absolute sm:left-[50%] sm:translate-x-[-50%] sm:translate-y-[-50%] sm:w-[50vw] sm:rounded  md:text-2xl  xl:hidden"}>
+            <div className={"flex justify-around items-center py-1 my-1 text-2xl relative capitalize text-center"}>
+
+                        <div className={" text-my_dark"}>
+                            <Link  className={""} title={""} href={""}>
+                                <HomeIcon />
+                                <p className={"text-[0.6rem] leading-5"}>Home</p>
+                            </Link>
+                        </div>
+
+                        <div className={" text-my_dark"}>
+                            <Link title={""} href={""}>
+                                <Market />
+                                <p className={"text-[0.6rem] leading-5"}>Shop</p>
+
+                            </Link>
+                        </div>
+
+                        <div className={"bg-my_yellow p-3 text-2xl text-my_dark_2 rounded-xl text-my_dark "}>
+                            <Link
+                                className={""}
+                                title={""}
+                                href={""}>
+                                    <Cart />
+                            </Link>
+                        </div>
+
+                        <div className={" text-my_dark"}>
+                            <Link title={""} href={""}>
+                                <Delivery />
+                                <p className={"text-[0.6rem] leading-5"}>order</p>
+
+                            </Link>
+                        </div>
+
+                        <div className={" text-my_dark"}>
+                            <Link className={""} title={""} href={""}>
+                                <Headset />
+                                <p className={"text-[0.6rem] m-0 leading-5"}>feedback</p>
+                            </Link>
+                        </div>
+            </div>
         </div>
     </main>
     );
