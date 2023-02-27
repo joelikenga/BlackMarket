@@ -14,8 +14,12 @@ export  const SearchSection = () => {
 
               {/*    small screen sidebar contents*/}
                   <div className={"absolute top-0 left-0 z-20 w-[100vw] h-[100vh] bg-[rgba(0,0,0,0.5)]"}>
-                        <div className={""}>
 
+                        {/*logo*/}
+                        <div className={"bg-my_light h-full w-fit p-3"}>
+                                <div className={""}>
+                                    <h3 className={"text-xl font-extrabold text-center"}>BlackMarket</h3>
+                                </div>
                         </div>
                   </div>
               </div>
