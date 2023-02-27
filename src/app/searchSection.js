@@ -1,42 +1,60 @@
+"use client"
+
 import {ArrowRight, Cart, Signout, Signin, UserIcon, Bar} from "../../public/svgIcons";
 import Link from "next/link";
+import {useState} from "react";
 
 export  const SearchSection = () => {
+
+  //   state initializations
+
+  const [sidebar, Setsidebar] = useState(false);
+
+  // functions
+    const sidebarClick = () => {
+        Setsidebar(!sidebar);
+    }
+
   return(
       <main className={"text-my_dark_2 sticky top-0 bg-[rgba(16,24,32,0.5)] px-4 py-1 sm:py-4 sm:px-6 z-50"}>
-
 
            {/*search input*/}
           <div className={" rounded flex justify-between items-center"}>
 
                 {/*  sidebar*/}
-              <div className={"text-2xl text-my_dark_2 text-my_dark_2 items-center block sm:hidden"}>
-                  <Bar className={""}/>
+              <div
+                  onClick={()=>{sidebarClick()}}
+                  className={"text-2xl text-my_dark_2 text-my_dark_2 items-center block sm:hidden"}>
+                    <Bar className={""}/>
 
-                    {/*    small screen sidebar contents*/}
-                  <div className={"hidden absolute flex top-0 left-0 z-20 w-[100vw] h-[100vh] bg-[rgba(0,0,0,0.5)]"}>
+              </div>
 
-                        {/*logo*/}
-                        <div className={"bg-my_light h-full w-fit p-3"}>
+                {/*    small screen sidebar contents*/}
+              <div
+                  style={{display: sidebar ? "block" : "none"}}
+                  className={"hidden absolute flex top-0 left-0 z-20 w-[100vw] h-[100vh] bg-[rgba(0,0,0,0.5)]"}>
 
-                            <div className={""}>
-                                <h3 className={"text-xl font-extrabold text-start"}>BlackMarket</h3>
-                            </div>
+                  {/*logo*/}
+                  <div className={"bg-my_light h-full w-fit p-3"}>
 
-                            {/*category contents*/}
-                            <div className={"overflow-y-scroll w-[13rem]"}>
+                      <div className={""}>
+                          <h3 className={"text-xl font-extrabold text-start"}>BlackMarket</h3>
+                      </div>
 
-                            </div>
+                      {/*category contents*/}
+                      <div className={"overflow-y-scroll w-[13rem]"}>
 
-                        </div>
-
-                          {/*close button */}
-                        <div>
-
-                        </div>
+                      </div>
 
                   </div>
+
+                  {/*close button */}
+                  <div>
+
+                  </div>
+
               </div>
+
 
 
 
