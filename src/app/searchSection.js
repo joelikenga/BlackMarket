@@ -25,7 +25,7 @@ export  const SearchSection = () => {
               <div
                   onClick={()=>{sidebarClick()}}
                   className={"z-[25] text-2xl text-my_dark_2 text-my_dark_2 items-center block sm:hidden"}>
-                  {sidebar ? <Times className={"p-1 text-3xl rounded-full bg-my_dark_2 text-my_yellow "}/> : <Bar className={""}/>}
+                  {sidebar ? <Times className={"p-1 text-4xl rounded-full bg-my_dark_2 text-my_yellow "}/> : <Bar className={""}/>}
 
               </div>
 
