@@ -5,7 +5,7 @@ export  const FooterContent = () => {
     return(
     <main className={"bottom-0 m-0 w-full sticky z-10 relative "}>
 
-        <div className={"bg-my_dark_2  rounded-t sm:absolute sm:left-[50%] sm:translate-x-[-50%] sm:translate-y-[-50%] sm:w-[50vw] sm:rounded  md:text-2xl  xl:hidden"}>
+        <div className={"bg-my_dark_2 overflow-hidden rounded-t sm:absolute sm:left-[50%] sm:translate-x-[-50%] sm:translate-y-[-50%] sm:w-[50vw] sm:rounded  md:text-2xl  xl:hidden"}>
             <div className={"flex justify-around items-center py-1 my-1 text-2xl relative capitalize text-center"}>
 
                         <div className={" text-my_dark mx-3"}>
