@@ -3,6 +3,9 @@
 import {ArrowRight, Cart, Signout, Signin, UserIcon, Bar, Times} from "../../public/svgIcons";
 import Link from "next/link";
 import {useState} from "react";
+import  {motion,AnimatePresence} from "framer-motion";
+import  {opacityVariant} from "@/app/myAnimation";
+
 
 export  const SearchSection = () => {
 
@@ -30,26 +33,28 @@ export  const SearchSection = () => {
               </div>
 
                 {/*    small screen sidebar contents*/}
-              <div
-                  style={{display: sidebar ? "block" : "none"}}
-                  className={"hidden absolute flex top-0 left-0 z-20 w-[100vw] h-[100vh] bg-[rgba(0,0,0,0.5)]"}>
+              <AnimatePresence>
+                  { sidebar && (
+                      <motion.div
+                          style={{display: sidebar ? "block" : "none"}}
+                          className={"hidden absolute flex top-0 left-0 z-20 w-[100vw] h-[100vh] bg-[rgba(0,0,0,0.5)]"}
+                          variants={opacityVariant}
+                          initial="start"
+                          animate="stop"
+                          exit={{opacity:0}}
+                      >
 
-                  {/*logo*/}
-                  <div className={"bg-my_light h-full w-fit p-3"}>
 
-                      {/*category contents*/}
-                      <div className={"overflow-y-scroll w-[13rem]"}>
-
+                      <div className={" bg-my_light h-full w-[13rem] p-4"}>
+                          {/*category contents*/}
+                          <div className={"overflow-y-scroll w-[] mt-10 h-fit w-full"}>
+                                gg
+                          </div>
                       </div>
 
-                  </div>
-
-                  {/*close button */}
-                  <div>
-
-                  </div>
-
-              </div>
+                      </motion.div>
+                  )}
+              </AnimatePresence>
 
 
 
