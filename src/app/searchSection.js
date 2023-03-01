@@ -24,11 +24,11 @@ export  const SearchSection = () => {
            {/*search input*/}
           <div className={" rounded flex justify-between items-center"}>
 
-                {/*  sidebar*/}
+                {/*  sidebar icon*/}
               <div
                   onClick={()=>{sidebarClick()}}
-                  className={"z-[25] text-2xl text-my_dark_2 text-my_dark_2 items-center block sm:hidden"}>
-                  {sidebar ? <Times className={"p-1 text-4xl rounded-full bg-my_dark_2 text-my_yellow "}/> : <Bar className={""}/>}
+                  className={"z-[25] text-my_dark_2 text-my_dark_2 items-center block sm:hidden"}>
+                  {sidebar ? <Times className={"p-1 text-4xl rounded-full bg-my_dark_2 text-my_yellow "}/> : <Bar className={"p-1 text-4xl"}/>}
 
               </div>
 
