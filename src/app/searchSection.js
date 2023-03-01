@@ -50,7 +50,7 @@ export  const SearchSection = () => {
                           initial="start"
                           animate="stop"
                           exit={{x:-100, opacity:0}}
-                          className={" bg-my_light h-full w-[13rem] p-4"}
+                          className={" bg-my_light h-full w-[17rem] p-4"}
                       >
 
                           {/*category contents*/}
