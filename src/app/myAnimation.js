@@ -3,7 +3,7 @@ export const opacityVariant = {
     stop:{
         opacity: 1,
         transition:{
-            duration:.2,
+            duration:.3,
         }
     },
 
