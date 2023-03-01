@@ -4,7 +4,7 @@ import {ArrowRight, Cart, Signout, Signin, UserIcon, Bar, Times} from "../../pub
 import Link from "next/link";
 import {useState} from "react";
 import  {motion,AnimatePresence} from "framer-motion";
-import  {opacityVariant} from "@/app/myAnimation";
+import {opacityVariant, showSidebarVariant, clickVariant} from "@/app/myAnimation";
 
 
 export  const SearchSection = () => {
@@ -37,20 +37,27 @@ export  const SearchSection = () => {
                   { sidebar && (
                       <motion.div
                           style={{display: sidebar ? "block" : "none"}}
-                          className={"hidden absolute flex top-0 left-0 z-20 w-[100vw] h-[100vh] bg-[rgba(0,0,0,0.5)]"}
+                          className={" absolute flex top-0 left-0 z-20 w-[100vw] h-[100vh] bg-[rgba(0,0,0,0.5)] "}
                           variants={opacityVariant}
                           initial="start"
                           animate="stop"
-                          exit={{opacity:0}}
+                          exit={{opacity:0,}}
                       >
 
 
-                      <div className={" bg-my_light h-full w-[13rem] p-4"}>
+                      <motion.div
+                          variants={showSidebarVariant}
+                          initial="start"
+                          animate="stop"
+                          exit={{x:-100, opacity:0}}
+                          className={" bg-my_light h-full w-[13rem] p-4"}
+                      >
+
                           {/*category contents*/}
                           <div className={"overflow-y-scroll w-[] mt-10 h-fit w-full"}>
                                 gg
                           </div>
-                      </div>
+                      </motion.div>
 
                       </motion.div>
                   )}
@@ -76,9 +83,12 @@ export  const SearchSection = () => {
                     className={" h-[1.5rem] w-[42vw] ml-3 bg-my_light bg-my_dark outline-0 font-medium text-my_dark_2 text-sm sm:h-fit sm:min-w-[36vw] md:w-fit md:text-lg lg:w-[44vw]"}
                 />
 
-                <button className={"text-xl px-2 mr-1 bg-my_dark_2 text-my_yellow rounded cursor-pointer sm:px-4 sm:text-2xl"}>
+                <motion.button
+                    variants={clickVariant}
+                    whileTap="click"
+                    className={"text-xl px-2 mr-1 bg-my_dark_2 text-my_yellow rounded cursor-pointer sm:px-4 sm:text-2xl"}>
                     <ArrowRight className={""}/>
-                </button>
+                </motion.button>
 
             </div>
 
@@ -102,7 +112,13 @@ export  const SearchSection = () => {
                 {/*small screen account profile button*/}
                 <div className={"block relative md:hidden"}>
 
-                    <button className={" bg-my_dark_2 text-my_yellow rounded-full inline-flex mb-1"}> <UserIcon className={"text-xl m-2"}/></button>
+                    <motion.button
+                      variants={clickVariant}
+                      whileTap="click"
+                      className={" bg-my_dark_2 text-my_yellow rounded-full inline-flex mb-1"}
+                    >
+                        <UserIcon className={"text-xl m-2"}/>
+                    </motion.button>
 
                     {/*small screen user profile content*/}
                     <div className={"hidden absolute right-0 top-10 p-3 rounded w-[13rem] bg-my_dark h-fit"}>
