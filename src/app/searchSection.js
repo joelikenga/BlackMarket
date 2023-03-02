@@ -27,7 +27,8 @@ export  const SearchSection = () => {
                 {/*  sidebar icon*/}
               <div
                   onClick={()=>{sidebarClick()}}
-                  className={"z-[25] text-my_dark_2 text-my_dark_2 items-center block sm:hidden"}>
+                  style={{zIndex : sidebar ? 21 : 20}}
+                  className={"text-my_dark_2 text-my_dark_2 items-center block sm:hidden"}>
                   {sidebar ? <Times className={"p-1 text-4xl rounded-full bg-my_dark_2 text-my_yellow "}/> : <Bar className={"p-1 text-4xl"}/>}
 
               </div>
@@ -75,13 +76,29 @@ export  const SearchSection = () => {
             </div>
 
 
-            <div className={"h-fit flex bg-my_light bg-my_dark rounded p-1 md:p-2 "}>
+            <div className={" h-fit flex bg-my_light bg-my_dark rounded p-1 md:p-2 "}>
 
                 <input
                     type={"text"}
                     placeholder={"What do you want..."}
                     className={" h-[1.5rem] w-[42vw] ml-3 bg-my_light bg-my_dark outline-0 font-medium text-my_dark_2 text-sm sm:h-fit sm:min-w-[36vw] md:w-fit md:text-lg lg:w-[44vw]"}
                 />
+
+                {/*search details show*/}
+
+                {/*<AnimatePresence >*/}
+                    {
+                        // search details dark background
+                        // <motion.div
+                        //     className={"top-0 left-0 z-20 absolute bg-my_dark_2 overflow-y-scroll w-[100vw] h-[100vh]"}
+                        // >
+                        //     <div className={""}>
+                        //         hh
+                        //     </div>
+                        //
+                        // </motion.div>
+                    }
+                {/*</AnimatePresence>*/}
 
                 <motion.button
                     variants={clickVariant}
