@@ -9,7 +9,7 @@ export default function Home() {
              <Navigation />
             <BodyContent />
         </div>
-        <div className={"absolute w-full bottom-0"}>
+        <div className={"sticky w-full bottom-0"}>
             <FooterContent/>
         </div>
     </main>
