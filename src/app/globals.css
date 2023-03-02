@@ -6,5 +6,5 @@
     margin: 0;
     padding: 0;
     /*overflow-scrolling: unset;*/
-    /*overflow: hidden;*/
+    overflow-y: hidden;
 }
