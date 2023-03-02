@@ -1,4 +1,3 @@
-import styles from './page.module.css'
 import  {Navigation} from "@/app/navigation";
 import {BodyContent} from "@/app/bodyContent";
 import {FooterContent} from "@/app/footerContent";
@@ -10,8 +9,9 @@ export default function Home() {
              <Navigation />
             <BodyContent />
         </div>
-        <FooterContent/>
-
+        <div>
+            <FooterContent/>
+        </div>
     </main>
   )
 }
