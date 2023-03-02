@@ -22,11 +22,8 @@ export  const SearchSection = () => {
       <main className={"text-my_dark_2 fixed w-full top-0 bg-[rgba(16,24,32,0.5)] px-4 py-1  sm:py-3 sm:px-5 z-50 lg:sticky"}>
 
 
-
-
            {/*search input*/}
           <div className={" rounded flex justify-between items-center"}>
-
 
 
 
