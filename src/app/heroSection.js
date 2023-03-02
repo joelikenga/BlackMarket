@@ -1,11 +1,9 @@
 import Image from "next/image";
-import Link from "next/link";
-import {CaretRight} from "../../public/svgIcons";
 
 export  const HeroSection = () => {
 
     return(
-      <main className={"my-4"}>
+      <main className={"my-4 mt-16"}>
           <div className={"grid grid-cols-4 gap-3 mx-6"}>
               {/*first*/}
               <div className={"h-[50vh] col-span-3 rounded"}>

@@ -11,7 +11,7 @@ export const BodyContent = () => {
       <main className={
           "bg-my_light w-full h-[100vh] overflow-y-scroll mx-0 xl:mx-0"}>
            <SearchSection/>
-           <HeroSection className={"pt-6"}/>
+           <HeroSection />
            <FeaturedProducts/>
            <BestOffers/>
            <FrequentPurchase/>
