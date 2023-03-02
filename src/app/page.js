@@ -9,7 +9,7 @@ export default function Home() {
              <Navigation />
             <BodyContent />
         </div>
-        <div>
+        <div className={"sticky bottom-0"}>
             <FooterContent/>
         </div>
     </main>
