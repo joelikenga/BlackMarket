@@ -3,7 +3,7 @@ import Link from "next/link";
 
 export  const FooterContent = () => {
     return(
-    <main className={" m-0 w-full z-20 relative "}>
+    <main className={"botttom-0 m-0 w-full z-20 relative "}>
 
         <div className={"bg-my_dark_2  overflow-hidden rounded-t sm:absolute sm:left-[50%] sm:translate-x-[-50%] sm:translate-y-[-50%] sm:w-[50vw] sm:rounded  md:text-2xl  xl:hidden"}>
             <div className={"flex justify-around items-center py-1 my-1 text-2xl relative capitalize text-center"}>
