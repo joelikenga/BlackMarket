@@ -19,19 +19,28 @@ export  const SearchSection = () => {
     }
 
   return(
-      <main className={"text-my_dark_2 fixed w-full top-0 bg-[rgba(16,24,32,0.5)] px-4 py-1  sm:py-3 sm:px-5 z-50"}>
+      <main className={"text-my_dark_2 fixed w-full top-0 bg-[rgba(16,24,32,0.5)] px-4 py-1  sm:py-3 sm:px-5 z-50 lg:sticky"}>
+
+
+
 
            {/*search input*/}
           <div className={" rounded flex justify-between items-center"}>
+
+
+
 
                 {/*  sidebar icon*/}
               <div
                   onClick={()=>{sidebarClick()}}
                   style={{zIndex : sidebar ? 21 : 20}}
-                  className={"text-my_dark_2 text-my_dark_2 items-center block sm:hidden"}>
+                  className={"text-my_dark_2 text-my_dark_2 items-center block md:hidden"}>
                   {sidebar ? <Times className={"p-1 text-4xl rounded-full bg-my_dark_2 text-my_yellow "}/> : <Bar className={"p-1 text-4xl"}/>}
 
               </div>
+
+
+
 
                 {/*    small screen sidebar contents*/}
               <AnimatePresence>
@@ -69,11 +78,13 @@ export  const SearchSection = () => {
 
 
             {/*  logo name*/}
-            <div className={"my-1 w-fit hidden sm:block xl:hidden lg:"}>
+            <div className={"my-1 w-fit hidden md:block xl:hidden"}>
                 <div className={"flex justify-between block xl:hidden"}>
                     <h3 className={"text-xl font-extrabold text-center"}>BlackMarket</h3>
                 </div>
             </div>
+
+
 
 
             <div className={" h-fit flex bg-my_light bg-my_dark rounded p-1 md:p-2 "}>
@@ -81,7 +92,7 @@ export  const SearchSection = () => {
                 <input
                     type={"text"}
                     placeholder={"What do you want..."}
-                    className={" h-[1.5rem] w-[42vw] ml-3 bg-my_light bg-my_dark outline-0 font-medium text-my_dark_2 text-sm sm:h-fit sm:min-w-[36vw] md:w-fit md:text-lg lg:w-[44vw]"}
+                    className={" h-[1.5rem] w-[42vw] ml-3 bg-my_light bg-my_dark outline-0 font-medium text-my_dark_2 text-sm sm:h-fit sm:min-w-[36vw] md:w-fit md:text-md   lg:w-[44vw]"}
                 />
 
                 {/*search details show*/}
@@ -111,16 +122,17 @@ export  const SearchSection = () => {
 
 
 
+
             {/*  cart and login*/}
             <div className={" inline-flex text-my_dark_2 mt-2"}>
 
-                <div className={"text-4xl mt-1 mr-3 justify-between flex hidden xl:block lg: "}>
+                <div className={"text-4xl mt-1 mr-3 justify-between flex hidden xl:block"}>
                     <Cart className={"cursor-pointer"}/>
                 </div>
 
 
                 <div
-                    className={"inline-block font-medium text-sm mt-1 hidden md:block"}>
+                    className={"font-medium text-sm mt-1 hidden md:block "}>
                     <button className={"px-3 py-2 bg-my_yellow text-my_dark_2 mx-2 rounded inline-flex"}> <Signin className={"text-xl"}/> login</button>
                     <button className={"px-3 py-2 bg-my_dark_2 text-my_yellow ml-1 rounded inline-flex"}> <Signout className={"text-xl"}/> Signup</button>
                 </div>
@@ -150,6 +162,8 @@ export  const SearchSection = () => {
                 </div>
 
             </div>
+
+
 
           </div>
 
