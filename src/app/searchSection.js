@@ -117,7 +117,7 @@ export  const SearchSection = () => {
                                     initial={{opacity:0}}
                                     animate={{opacity:1}}
                                     transition={{duration: 0.1, delay:0.2}}
-                                    className={"relative p-4 w-[22rem] h-[70vh] rounded-lg bg-my_dark_2 right-0 left-0 absolute top-[2%]  mx-auto  sm:w-[30rem] md:w-[40rem]"}>
+                                    className={"relative p-4 w-[22rem] h-[70vh] rounded-lg bg-my_dark_2 right-0 left-0 absolute top-[2%]  mx-auto  sm:w-[30rem] md:w-[40rem] xl:ml-14"}>
 
                                     {/*modal header*/}
                                     <div className={"flex items-center gap-3 justify-between"}>
@@ -155,7 +155,7 @@ export  const SearchSection = () => {
                     <motion.button
                         variants={clickVariant}
                         whileTap="click"
-                        className={"text-xl px-2 mr-1 bg-my_dark_2 text-my_yellow rounded cursor-pointer sm:px-4 sm:text-2xl"}>
+                        className={" text-xl px-2 mr-1 bg-my_dark_2 text-my_yellow rounded cursor-pointer sm:px-4 sm:text-2xl"}>
                         <ArrowRight className={""}/>
                     </motion.button>
 
