@@ -89,7 +89,7 @@ export  const SearchSection = () => {
 
 
             {/*input*/}
-            <div style={{zIndex :closeModal ? "20" : "100"}}>
+            <div style={{zIndex :closeModal ? "19" : "2500"}}>
                 <div className={" h-fit flex bg-my_light bg-my_dark rounded p-1 md:p-2 "}>
 
                     <input
@@ -102,20 +102,20 @@ export  const SearchSection = () => {
                     {/*search details modal*/}
 
                     <AnimatePresence >
-                        {
+                        { !closeModal &&
                             // search details dark background
                             <motion.div
                                 style={{display: closeModal ? "none" : "block"}}
                                 initial={{opacity:0}}
                                 animate={{opacity:1}}
-                                transition={{type:"spring", damping:10, stiffness:100, duration: 2}}
+                                transition={{type:"spring", damping:10, stiffness:100, duration: .2}}
                                 exit={{opacity:0,}}
                                 className={"capitalize top-0 left-0 z-20 absolute bg-[rgba(0,0,0,0.7)] w-full h-[100vh]"}
                             >
                                 <motion.div
                                     initial={{opacity:0}}
                                     animate={{opacity:1}}
-                                    transition={{type:"spring", damping:10, stiffness:100, duration: 2, delay:3}}
+                                    transition={{type:"spring", damping:10, duration: 0.1, delay:0.2}}
                                     className={"p-4 w-[22rem] h-[30rem] rounded-lg bg-my_dark_2 right-0 left-0 absolute top-[15%]  mx-auto  sm:w-[30rem] md:w-[40rem]"}>
 
                                     <div className={"flex gap-3 justify-between"}>
