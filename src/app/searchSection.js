@@ -1,6 +1,6 @@
 "use client"
 
-import {ArrowRight, Cart, Signout, Signin, UserIcon, Bar, Times} from "../../public/svgIcons";
+import {ArrowRight, Cart, Signout, Signin, UserIcon, Bar, Times, Maximize} from "../../public/svgIcons";
 import Link from "next/link";
 import {useState} from "react";
 import  {motion,AnimatePresence} from "framer-motion";
@@ -92,16 +92,29 @@ export  const SearchSection = () => {
                     className={" h-[1.5rem] w-[42vw] ml-3 bg-my_light bg-my_dark outline-0 font-medium text-my_dark_2 text-sm sm:h-fit sm:min-w-[36vw] md:w-fit md:text-md   lg:w-[44vw]"}
                 />
 
-                {/*search details show*/}
+                {/*search details modal*/}
 
                 {/*<AnimatePresence >*/}
                     {
                         // search details dark background
                         <motion.div
-                            className={" top-0 left-0 z-20 absolute bg-[rgba(0,0,0,0.7)] w-full h-[100vh]"}
+                            className={"capitalize top-0 left-0 z-20 absolute bg-[rgba(0,0,0,0.7)] w-full h-[100vh]"}
                         >
-                            <div className={"w-[22rem] h-[18rem] rounded-lg bg-my_dark_2 right-0 left-0  mx-auto translate-y-[30%]  sm:w-[30rem] h-[22rem] md:w-[40rem] md:h-[25rem]"}>
-                                hh
+                            <div className={"p-4 w-[22rem] h-[18rem] rounded-lg bg-my_dark_2 right-0 left-0  mx-auto translate-y-[30%]  sm:w-[30rem] h-[22rem] md:w-[40rem] md:h-[25rem]"}>
+
+                                <div className={"flex justify-between"}>
+
+                                    <div className={"text-my_yellow"}>
+                                        search :{}
+                                    </div>
+
+                                    <div className={"inline-flex text-my_dark_2 gap-5 text-xl"}>
+                                        <div className={"p-1 rounded-full bg-my_yellow"}><Maximize/></div>
+                                        <div className={"p-1 rounded-full bg-my_yellow"}><Times/></div>
+                                    </div>
+
+                                </div>
+
                             </div>
 
                         </motion.div>
