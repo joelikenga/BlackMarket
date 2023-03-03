@@ -97,14 +97,14 @@ export  const SearchSection = () => {
                 {/*<AnimatePresence >*/}
                     {
                         // search details dark background
-                        // <motion.div
-                        //     className={"top-0 left-0 z-20 absolute bg-my_dark_2 overflow-y-scroll w-[100vw] h-[100vh]"}
-                        // >
-                        //     <div className={""}>
-                        //         hh
-                        //     </div>
-                        //
-                        // </motion.div>
+                        <motion.div
+                            className={"top-0 left-0 z-20 absolute bg-[rgba(0,0,0,0.5)] w-full h-[100vh]"}
+                        >
+                            <div className={"w-[25rem] h-[18rem] rounded-lg bg-my_dark_2 right-0 left-0  mx-auto translate-y-[30%]  sm:w-[30rem] h-[22rem] md:w-[40rem] md:h-[25rem]"}>
+                                hh
+                            </div>
+
+                        </motion.div>
                     }
                 {/*</AnimatePresence>*/}
 
