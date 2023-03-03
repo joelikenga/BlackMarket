@@ -142,7 +142,7 @@ export  const SearchSection = () => {
 
                                     {/* modal body*/}
 
-                                    <div className={"flex item-center bg-my_dark h-[85%] my-3 lg:h-[82%]"}>
+                                    <div className={"overflow-y-auto rounded flex item-center bg-[rgba(255,255,255,0.1)] h-[85%] my-3 lg:h-[82%]"}>
 
                                     </div>
 
