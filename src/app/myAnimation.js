@@ -32,3 +32,13 @@ export const clickVariant = {
         scale:0.9
     }
 }
+
+export const  expandSearchVariant = {
+    start:{
+        x:0
+    },
+    stop:{
+
+
+    }
+}

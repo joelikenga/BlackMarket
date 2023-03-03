@@ -1,10 +1,10 @@
 "use client"
 
-import {ArrowRight, Cart, Signout, Signin, UserIcon, Bar, Times, Maximize} from "../../public/svgIcons";
+import {ArrowRight, Cart, Signout, Signin, UserIcon, Bar, Times, Maximize, Minimize} from "../../public/svgIcons";
 import Link from "next/link";
 import {useState} from "react";
 import  {motion,AnimatePresence} from "framer-motion";
-import {opacityVariant, showSidebarVariant, clickVariant} from "@/app/myAnimation";
+import {opacityVariant, showSidebarVariant, clickVariant, expandSearchVariant} from "@/app/myAnimation";
 
 
 export  const SearchSection = () => {
@@ -12,8 +12,13 @@ export  const SearchSection = () => {
   //   state initializations
 
   const [sidebar, Setsidebar] = useState(false);
+  const [minimise, Setminimise] = useState(false)
 
   // functions
+
+    const minimiseClick = () =>{
+      Setminimise(!minimise);
+    }
     const sidebarClick = () => {
         Setsidebar(!sidebar);
     }
@@ -94,32 +99,48 @@ export  const SearchSection = () => {
 
                 {/*search details modal*/}
 
-                {/*<AnimatePresence >*/}
+                <AnimatePresence >
                     {
                         // search details dark background
                         <motion.div
                             className={"capitalize top-0 left-0 z-20 absolute bg-[rgba(0,0,0,0.7)] w-full h-[100vh]"}
                         >
-                            <div className={"p-4 w-[22rem] h-[18rem] rounded-lg bg-my_dark_2 right-0 left-0  mx-auto translate-y-[30%]  sm:w-[30rem] h-[22rem] md:w-[40rem] md:h-[25rem]"}>
+                            <motion.div
+                                // style={{height}}
+                                initial={"start"}
+                                animate={{height: minimise ? "30rem" : "20rem",}}
+                                transition={{duration:1, damping:10, stiffness: 100, type: "spring"}}
+                                variants={expandSearchVariant}
+                                className={"p-4 w-[22rem] h-[18rem] rounded-lg bg-my_dark_2 right-0 left-0 absolute top-[15%]  mx-auto  sm:w-[30rem] h-[22rem] md:w-[40rem] md:h-[25rem]"}>
 
-                                <div className={"flex justify-between"}>
+                                <div className={"flex gap-3 justify-between"}>
 
-                                    <div className={"text-my_yellow"}>
-                                        search :{}
+                                    <div className={"text-my_yellow truncate"}>
+                                        Search : {"how to train your personal"}
                                     </div>
 
-                                    <div className={"inline-flex text-my_dark_2 gap-5 text-xl"}>
-                                        <div className={"p-1 rounded-full bg-my_yellow"}><Maximize/></div>
-                                        <div className={"p-1 rounded-full bg-my_yellow"}><Times/></div>
+                                    {/*modal buttons*/}
+                                    <div className={"inline-flex text-my_dark_2 gap-5 text-xl md:text-2xl"}>
+
+                                        <div
+                                            onClick={() => {minimiseClick()}}
+                                            className={"p-1 rounded-full bg-my_yellow cursor-pointer"}
+                                        >
+                                            {minimise ? <Minimize/> : <Maximize/>}
+                                        </div>
+
+                                        <div className={"p-1 rounded-full bg-my_yellow cursor-pointer"}><Times/></div>
+
                                     </div>
+
 
                                 </div>
 
-                            </div>
+                            </motion.div>
 
                         </motion.div>
                     }
-                {/*</AnimatePresence>*/}
+                </AnimatePresence>
 
                 <motion.button
                     variants={clickVariant}
