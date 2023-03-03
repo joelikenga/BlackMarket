@@ -1,10 +1,10 @@
 "use client"
 
-import {ArrowRight, Cart, Signout, Signin, UserIcon, Bar, Times, Maximize, Minimize} from "../../public/svgIcons";
+import {ArrowRight, Cart, Signout, Signin, UserIcon, Bar, Times, } from "../../public/svgIcons";
 import Link from "next/link";
 import {useState} from "react";
 import  {motion,AnimatePresence} from "framer-motion";
-import {opacityVariant, showSidebarVariant, clickVariant, expandSearchVariant} from "@/app/myAnimation";
+import {opacityVariant, showSidebarVariant, clickVariant, } from "@/app/myAnimation";
 
 
 export  const SearchSection = () => {
@@ -12,12 +12,12 @@ export  const SearchSection = () => {
   //   state initializations
 
   const [sidebar, Setsidebar] = useState(false);
-  const [minimise, Setminimise] = useState(false)
+  const [closeModal, SetcloseModal] = useState(true);
 
   // functions
 
-    const minimiseClick = () =>{
-      Setminimise(!minimise);
+    const closeModalclick = () =>{
+      SetcloseModal(!closeModal);
     }
     const sidebarClick = () => {
         Setsidebar(!sidebar);
@@ -88,67 +88,64 @@ export  const SearchSection = () => {
 
 
 
+            {/*input*/}
+            <div style={{zIndex :closeModal ? "20" : "100"}}>
+                <div className={" h-fit flex bg-my_light bg-my_dark rounded p-1 md:p-2 "}>
 
-            <div className={" h-fit flex bg-my_light bg-my_dark rounded p-1 md:p-2 "}>
+                    <input
+                        onInput={() => {SetcloseModal(false)}}
+                        type={"text"}
+                        placeholder={"What do you want..."}
+                        className={" h-[1.5rem] w-[42vw] ml-3 bg-my_light bg-my_dark outline-0 font-medium text-my_dark_2 text-sm sm:h-fit sm:min-w-[36vw] md:w-fit md:text-md   lg:w-[44vw]"}
+                    />
 
-                <input
-                    type={"text"}
-                    placeholder={"What do you want..."}
-                    className={" h-[1.5rem] w-[42vw] ml-3 bg-my_light bg-my_dark outline-0 font-medium text-my_dark_2 text-sm sm:h-fit sm:min-w-[36vw] md:w-fit md:text-md   lg:w-[44vw]"}
-                />
+                    {/*search details modal*/}
 
-                {/*search details modal*/}
-
-                <AnimatePresence >
-                    {
-                        // search details dark background
-                        <motion.div
-                            className={"capitalize top-0 left-0 z-20 absolute bg-[rgba(0,0,0,0.7)] w-full h-[100vh]"}
-                        >
+                    <AnimatePresence >
+                        {
+                            // search details dark background
                             <motion.div
-                                // style={{height}}
-                                initial={"start"}
-                                animate={{height: minimise ? "30rem" : "20rem",}}
-                                transition={{duration:1, damping:10, stiffness: 100, type: "spring"}}
-                                variants={expandSearchVariant}
-                                className={"p-4 w-[22rem] h-[18rem] rounded-lg bg-my_dark_2 right-0 left-0 absolute top-[15%]  mx-auto  sm:w-[30rem] h-[22rem] md:w-[40rem] md:h-[25rem]"}>
+                                style={{display: closeModal ? "none" : "block"}}
+                                initial={{opacity:0}}
+                                animate={{opacity:1}}
+                                transition={{type:"spring", damping:10, stiffness:100, duration: 2}}
+                                exit={{opacity:0,}}
+                                className={"capitalize top-0 left-0 z-20 absolute bg-[rgba(0,0,0,0.7)] w-full h-[100vh]"}
+                            >
+                                <motion.div
+                                    initial={{opacity:0}}
+                                    animate={{opacity:1}}
+                                    transition={{type:"spring", damping:10, stiffness:100, duration: 2, delay:3}}
+                                    className={"p-4 w-[22rem] h-[30rem] rounded-lg bg-my_dark_2 right-0 left-0 absolute top-[15%]  mx-auto  sm:w-[30rem] md:w-[40rem]"}>
 
-                                <div className={"flex gap-3 justify-between"}>
+                                    <div className={"flex gap-3 justify-between"}>
 
-                                    <div className={"text-my_yellow truncate"}>
-                                        Search : {"how to train your personal"}
-                                    </div>
-
-                                    {/*modal buttons*/}
-                                    <div className={"inline-flex text-my_dark_2 gap-5 text-xl md:text-2xl"}>
-
-                                        <div
-                                            onClick={() => {minimiseClick()}}
-                                            className={"p-1 rounded-full bg-my_yellow cursor-pointer"}
-                                        >
-                                            {minimise ? <Minimize/> : <Maximize/>}
+                                        <div className={"text-my_yellow truncate"}>
+                                            Search : {"how to train your personal"}
                                         </div>
 
-                                        <div className={"p-1 rounded-full bg-my_yellow cursor-pointer"}><Times/></div>
+                                        {/*modal buttons*/}
+                                        <div className={"inline-flex text-my_dark_2 gap-5 text-xl md:text-2xl"}>
+                                            <div onClick={()=>{closeModalclick()}} className={"p-1 rounded-full bg-my_yellow cursor-pointer"}><Times/></div>
+                                        </div>
+
 
                                     </div>
 
-
-                                </div>
+                                </motion.div>
 
                             </motion.div>
+                        }
+                    </AnimatePresence>
 
-                        </motion.div>
-                    }
-                </AnimatePresence>
+                    <motion.button
+                        variants={clickVariant}
+                        whileTap="click"
+                        className={"text-xl px-2 mr-1 bg-my_dark_2 text-my_yellow rounded cursor-pointer sm:px-4 sm:text-2xl"}>
+                        <ArrowRight className={""}/>
+                    </motion.button>
 
-                <motion.button
-                    variants={clickVariant}
-                    whileTap="click"
-                    className={"text-xl px-2 mr-1 bg-my_dark_2 text-my_yellow rounded cursor-pointer sm:px-4 sm:text-2xl"}>
-                    <ArrowRight className={""}/>
-                </motion.button>
-
+                </div>
             </div>
 
 
