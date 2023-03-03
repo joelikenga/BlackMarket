@@ -12,7 +12,7 @@ export  const SearchSection = () => {
   //   state initializations
 
   const [sidebar, Setsidebar] = useState(false);
-  const [closeModal, SetcloseModal] = useState(true);
+  const [closeModal, SetcloseModal] = useState(false);
 
   // functions
 
@@ -93,7 +93,7 @@ export  const SearchSection = () => {
                 <div className={" h-fit flex bg-my_light bg-my_dark rounded p-1 md:p-2 "}>
 
                     <button
-                        onClick={() => {SetcloseModal(false)}}
+                        onClick={() => {SetcloseModal(true)}}
                         className={" text-start h-[1.5rem] w-[42vw] ml-3 bg-my_light bg-my_dark outline-0 font-medium text-my_dark text-sm sm:h-fit sm:min-w-[36vw] md:w-fit md:text-md   lg:w-[44vw]"}
                     >
                         <div className={"mt-[.1rem] md:mt-[.2rem]"}>Quick search...</div>
@@ -102,10 +102,10 @@ export  const SearchSection = () => {
                     {/*search details modal*/}
 
                     <AnimatePresence >
-                        { !closeModal &&
+                        { closeModal &&
                             // search details dark background
                             <motion.div
-                                style={{display: closeModal ? "none" : "block"}}
+                                style={{display: closeModal ? "block" : "none"}}
                                 initial={{opacity:0}}
                                 animate={{opacity:1}}
                                 transition={{type:"spring", damping:10, stiffness:100, duration: .2}}
@@ -117,7 +117,7 @@ export  const SearchSection = () => {
                                     initial={{opacity:0}}
                                     animate={{opacity:1}}
                                     transition={{duration: 0.1, delay:0.2}}
-                                    className={"p-4 w-[22rem] h-[70vh] rounded-lg bg-my_dark_2 right-0 left-0 absolute top-[2%]  mx-auto  sm:w-[30rem] md:w-[40rem]"}>
+                                    className={"relative p-4 w-[22rem] h-[70vh] rounded-lg bg-my_dark_2 right-0 left-0 absolute top-[2%]  mx-auto  sm:w-[30rem] md:w-[40rem]"}>
 
                                     {/*modal header*/}
                                     <div className={"flex items-center gap-3 justify-between"}>
@@ -136,6 +136,13 @@ export  const SearchSection = () => {
                                             <div onClick={()=>{closeModalclick()}} className={"p-1 rounded-full bg-my_yellow cursor-pointer"}><Times/></div>
                                         </div>
 
+
+                                    </div>
+
+
+                                    {/* modal body*/}
+
+                                    <div className={"flex item-center bg-my_dark h-[85%] my-3 lg:h-[82%]"}>
 
                                     </div>
 
