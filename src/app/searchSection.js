@@ -92,12 +92,12 @@ export  const SearchSection = () => {
             <div style={{zIndex :closeModal ? "19" : "2500"}}>
                 <div className={" h-fit flex bg-my_light bg-my_dark rounded p-1 md:p-2 "}>
 
-                    <input
-                        onInput={() => {SetcloseModal(false)}}
-                        type={"text"}
-                        placeholder={"What do you want..."}
-                        className={" h-[1.5rem] w-[42vw] ml-3 bg-my_light bg-my_dark outline-0 font-medium text-my_dark_2 text-sm sm:h-fit sm:min-w-[36vw] md:w-fit md:text-md   lg:w-[44vw]"}
-                    />
+                    <button
+                        onClick={() => {SetcloseModal(false)}}
+                        className={" text-start h-[1.5rem] w-[42vw] ml-3 bg-my_light bg-my_dark outline-0 font-medium text-my_dark text-sm sm:h-fit sm:min-w-[36vw] md:w-fit md:text-md   lg:w-[44vw]"}
+                    >
+                        <div className={"mt-[.1rem] md:mt-[.2rem]"}>Quick search...</div>
+                    </button>
 
                     {/*search details modal*/}
 
@@ -116,12 +116,18 @@ export  const SearchSection = () => {
                                     initial={{opacity:0}}
                                     animate={{opacity:1}}
                                     transition={{type:"spring", damping:10, duration: 0.1, delay:0.2}}
-                                    className={"p-4 w-[22rem] h-[30rem] rounded-lg bg-my_dark_2 right-0 left-0 absolute top-[15%]  mx-auto  sm:w-[30rem] md:w-[40rem]"}>
+                                    className={"p-4 w-[22rem] h-[70vh] rounded-lg bg-my_dark_2 right-0 left-0 absolute top-[15%]  mx-auto  sm:w-[30rem] md:w-[40rem]"}>
 
                                     <div className={"flex gap-3 justify-between"}>
+                                        <div className={"flex text-my_dark_2"}>
+                                            <div className={"p-1 rounded-sm text-xl bg-my_yellow"}><Times/></div>
+                                            <input
+                                                autoFocus
+                                                className={"text-my_dark_2 outline-0 bg-my_dark px-2 rounded"}
+                                                placeholder={"search all.."}
+                                                type={"search"}
 
-                                        <div className={"text-my_yellow truncate"}>
-                                            Search : {"how to train your personal"}
+                                            />
                                         </div>
 
                                         {/*modal buttons*/}
