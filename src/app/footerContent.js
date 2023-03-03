@@ -23,13 +23,13 @@ export  const FooterContent = () => {
                             </Link>
                         </div>
 
-                        <div className={"bg-my_yellow p-3 text-2xl text-my_dark_2 rounded-xl text-my_dark "}>
+                        <div className={"rotate-45 bg-my_yellow p-3 text-2xl text-my_dark_2 rounded-xl text-my_dark "}>
                             <Link
-                                className={"relative"}
+                                className={"relative "}
                                 title={""}
                                 href={""}>
                                 <p className={"absolute text-sm p-1 -top-1 left-2 bg-my_dark_2 rounded-full animate-ping"}></p>
-                                    <Cart />
+                                    <Cart className={"-rotate-45"}/>
                             </Link>
                         </div>
 

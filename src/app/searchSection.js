@@ -1,6 +1,6 @@
 "use client"
 
-import {ArrowRight, Cart, Signout, Signin, UserIcon, Bar, Times, } from "../../public/svgIcons";
+import {ArrowRight, Cart, Signout, Signin, UserIcon, Bar, Times, Magnifier,} from "../../public/svgIcons";
 import Link from "next/link";
 import {useState} from "react";
 import  {motion,AnimatePresence} from "framer-motion";
@@ -88,8 +88,8 @@ export  const SearchSection = () => {
 
 
 
-            {/*input*/}
-            <div style={{zIndex :closeModal ? "19" : "2500"}}>
+            {/*quiick search button*/}
+            <div>
                 <div className={" h-fit flex bg-my_light bg-my_dark rounded p-1 md:p-2 "}>
 
                     <button
@@ -112,26 +112,27 @@ export  const SearchSection = () => {
                                 exit={{opacity:0,}}
                                 className={"capitalize top-0 left-0 z-20 absolute bg-[rgba(0,0,0,0.7)] w-full h-[100vh]"}
                             >
+                                {/*modal*/}
                                 <motion.div
                                     initial={{opacity:0}}
                                     animate={{opacity:1}}
-                                    transition={{type:"spring", damping:10, duration: 0.1, delay:0.2}}
-                                    className={"p-4 w-[22rem] h-[70vh] rounded-lg bg-my_dark_2 right-0 left-0 absolute sm:top-[5%]  mx-auto  sm:w-[30rem] md:w-[40rem]"}>
+                                    transition={{duration: 0.1, delay:0.2}}
+                                    className={"p-4 w-[22rem] h-[70vh] rounded-lg bg-my_dark_2 right-0 left-0 absolute top-[2%]  mx-auto  sm:w-[30rem] md:w-[40rem]"}>
 
-                                    <div className={"flex gap-3 justify-between"}>
-                                        <div className={"flex text-my_dark_2"}>
-                                            <div className={"p-1 rounded-sm text-xl bg-my_yellow"}><Times/></div>
+                                    {/*modal header*/}
+                                    <div className={"flex items-center gap-3 justify-between"}>
+                                        <div className={"flex  rounded-sm bg-my_dark p-1 text-my_dark_2"}>
+                                            <div className={"rounded-sm w-fit p-[.1rem] rounded-sm text-2xl bg-my_yellow"}><Magnifier/></div>
                                             <input
                                                 autoFocus
-                                                className={"text-my_dark_2 outline-0 bg-my_dark px-2 rounded"}
+                                                className={"w-[13rem] text-my_dark_2 ml-2 outline-none bg-my_dark rounded sm:text-sm sm:w-[16rem] md:w-[22rem]"}
                                                 placeholder={"search all.."}
                                                 type={"search"}
-
                                             />
                                         </div>
 
                                         {/*modal buttons*/}
-                                        <div className={"inline-flex text-my_dark_2 gap-5 text-xl md:text-2xl"}>
+                                        <div className={"m-1 inline-flex text-my_dark_2 gap-5 text-xl md:text-2xl"}>
                                             <div onClick={()=>{closeModalclick()}} className={"p-1 rounded-full bg-my_yellow cursor-pointer"}><Times/></div>
                                         </div>
 
@@ -176,6 +177,7 @@ export  const SearchSection = () => {
                 <div className={"block relative md:hidden"}>
 
                     <motion.button
+                      onClick={() => {SetcloseModal(false)}}
                       variants={clickVariant}
                       whileTap="click"
                       className={" bg-my_dark_2 text-my_yellow rounded-full inline-flex mb-1"}
