@@ -121,11 +121,11 @@ export  const SearchSection = () => {
 
                                     {/*modal header*/}
                                     <div className={"flex items-center gap-3 justify-between"}>
-                                        <div className={"flex  rounded-sm bg-my_dark p-1 text-my_dark_2"}>
-                                            <div className={"rounded-sm w-fit p-[.1rem] rounded-sm text-2xl bg-my_yellow"}><Magnifier/></div>
+                                        <div className={"flex rounded-sm bg-my_dark p-1 text-my_dark_2"}>
+                                            <div className={"rounded-sm w-fit p-[.1rem]  rounded-sm text-2xl bg-my_yellow"}><Magnifier/></div>
                                             <input
                                                 autoFocus
-                                                className={"w-[13rem] text-my_dark_2 ml-2 outline-none bg-my_dark rounded sm:text-sm sm:w-[16rem] md:w-[22rem]"}
+                                                className={"w-[13rem] font-medium  ml-2 outline-none bg-my_dark rounded sm:text-sm sm:w-[16rem] md:w-[22rem]"}
                                                 placeholder={"search all.."}
                                                 type={"search"}
                                             />
