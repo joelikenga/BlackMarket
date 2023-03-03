@@ -116,7 +116,7 @@ export  const SearchSection = () => {
                                     initial={{opacity:0}}
                                     animate={{opacity:1}}
                                     transition={{type:"spring", damping:10, duration: 0.1, delay:0.2}}
-                                    className={"p-4 w-[22rem] h-[70vh] rounded-lg bg-my_dark_2 right-0 left-0 absolute top-[15%]  mx-auto  sm:w-[30rem] md:w-[40rem]"}>
+                                    className={"p-4 w-[22rem] h-[70vh] rounded-lg bg-my_dark_2 right-0 left-0 absolute sm:top-[5%]  mx-auto  sm:w-[30rem] md:w-[40rem]"}>
 
                                     <div className={"flex gap-3 justify-between"}>
                                         <div className={"flex text-my_dark_2"}>
