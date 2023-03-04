@@ -13,10 +13,11 @@ export const AllProductsSample = () =>{
         <main className={"m-6 text-my_dark_2"}>
             {/*section name*/}
             <div className={"flex justify-start mb-3"}>
-              <p className={" border-x-4 border-my_yellow px-2 py-1 text-xl font-normal"}>Top <span className={"text-2xl font-medium"}>Categories</span></p>
+              <p className={"border-x-4 border-my_yellow px-2 py-0  font-normal text-md sm:text-lg md:text-xl"}>Top
+                  <span className={" font-medium text-lg sm:text-xl md:text-2xl"}>Categories</span></p>
             </div>
 
-            <div className={"grid grid-cols-8 gap-3 bg-my_dark p-3"}>
+            <div className={"grid grid-cols-2 sm:grid-cols-4 md:grid-cols-8 gap-3 bg-my_dark p-3"}>
 
                 {
                     details.map((myDetails,index) => (

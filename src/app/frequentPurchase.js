@@ -16,14 +16,14 @@ export const FrequentPurchase = () => {
               {/*  name and buttons*/}
               <div className={"flex justify-between my-4"}>
                   <div className={"flex items-end"}>
-                      <p className={" border-x-4 border-my_yellow px-2 py-1 text-xl font-normal"}>Frequently
-                          <span className={"text-2xl font-medium"}>Purchased</span>
+                      <p className={"border-x-4 border-my_yellow px-2 py-0  font-normal text-md sm:text-lg md:text-xl"}>Frequently
+                          <span className={" font-medium text-lg sm:text-xl md:text-2xl"}>Purchased</span>
                       </p>
                   </div>
 
-                  <div className={"flex text-2xl"}>
-                    <i className={"p-2 rounded-full bg-my_dark_2 text-my_yellow mr-3 cursor-pointer"}><ChevronBack/></i>
-                    <i className={"p-2 rounded-full bg-my_dark_2 text-my_yellow ml-3 cursor-pointer"}><ChevronFoward/></i>
+                  <div className={"flex gap-3 text-2xl"}>
+                    <i className={"p-2 rounded-full bg-my_dark_2 text-my_yellow cursor-pointer scale-90 md:scale-95 lg:scale-100"}><ChevronBack/></i>
+                    <i className={"p-2 rounded-full bg-my_dark_2 text-my_yellow cursor-pointer scale-90 md:scale-95 lg:scale-100"}><ChevronFoward/></i>
                   </div>
               </div>
 
