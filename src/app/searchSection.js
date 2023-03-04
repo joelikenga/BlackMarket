@@ -13,6 +13,7 @@ export  const SearchSection = () => {
 
   const [sidebar, Setsidebar] = useState(false);
   const [closeModal, SetcloseModal] = useState(false);
+  const [profile, Setprofile] = useState(false);
 
   // functions
 
@@ -21,6 +22,9 @@ export  const SearchSection = () => {
     }
     const sidebarClick = () => {
         Setsidebar(!sidebar);
+    }
+    const profileClick = () => {
+        Setprofile(!profile);
     }
 
   return(
@@ -153,6 +157,7 @@ export  const SearchSection = () => {
                     </AnimatePresence>
 
                     <motion.button
+                        onClick={() => {SetcloseModal(true)}}
                         variants={clickVariant}
                         whileTap="click"
                         className={" text-xl px-2 mr-1 bg-my_dark_2 text-my_yellow rounded cursor-pointer sm:px-4 sm:text-2xl"}>
@@ -184,7 +189,9 @@ export  const SearchSection = () => {
                 <div className={"block relative md:hidden"}>
 
                     <motion.button
-                      onClick={() => {SetcloseModal(false)}}
+                      onClick={() => {profileClick()}}
+                      onFocus={() => {Setprofile(true)}}
+                      onBlur={() => {Setprofile(false)}}
                       variants={clickVariant}
                       whileTap="click"
                       className={" bg-my_dark_2 text-my_yellow rounded-full inline-flex mb-1"}
@@ -193,14 +200,25 @@ export  const SearchSection = () => {
                     </motion.button>
 
                     {/*small screen user profile content*/}
-                    <div className={"hidden absolute right-0 top-10 p-3 rounded w-[13rem] bg-my_dark h-fit"}>
+                    <AnimatePresence>
+                        { profile &&
+                        <motion.div
+                            initial={{opacity:0,x:500}}
+                            animate={{opacity:1,x:0}}
+                            transition={{duration:0.5, damping:10, type:"spring"}}
+                            exit={{opacity:0,x:500}}
+                            style={{display: profile ? "block" : "none"}}
+                            className={" absolute right-0 top-10 p-3 rounded w-[15rem] bg-my_dark h-[18rem] max-h-fit"}>
 
-                        <div className={"flex justify-between font-normal text-[0.8rem]"}>
-                            <Link href={""} className={"px-2 py-1 bg-my_yellow text-my_dark_2 mx-2 rounded inline-flex"}><Signin className={" text-sm mt-[.1rem] mr-[.1rem]"}/>login</Link>
-                            <Link href={""} className={"px-2 py-1 bg-my_dark_2 text-my_yellow ml-1 rounded inline-flex"}><Signout className={"text-sm mt-[.1rem] mr-[.1rem]"}/> Signup</Link>
-                        </div>
+                            <div
+                                className={"flex justify-between font-normal text-[0.8rem]"}>
+                                <Link href={""} className={"px-2 py-1 bg-my_yellow text-my_dark_2 mx-2 rounded inline-flex"}><Signin className={" text-sm mt-[.1rem] mr-[.1rem]"}/>login</Link>
+                                <Link href={""} className={"px-2 py-1 bg-my_dark_2 text-my_yellow ml-1 rounded inline-flex"}><Signout className={"text-sm mt-[.1rem] mr-[.1rem]"}/> Signup</Link>
+                            </div>
 
-                    </div>
+                        </motion.div>
+                        }
+                    </AnimatePresence>
 
                 </div>
 
