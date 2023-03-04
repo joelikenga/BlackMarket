@@ -23,8 +23,8 @@ export const FeaturedProducts = () => {
                       <Link className={"ml-3 hover:underline text-md md:text-lg lg:text-xl"} href={""}>more</Link>
                   </div>
                   <div className={"flex gap-3 text-2xl"}>
-                    <i className={"p-2 rounded-full bg-my_dark_2 text-my_yellow cursor-pointer scale-75 md:scale-90 lg:scale-100"}><ChevronBack/></i>
-                    <i className={"p-2 rounded-full bg-my_dark_2 text-my_yellow cursor-pointer scale-75 md:scale-90 lg:scale-100"}><ChevronFoward/></i>
+                    <i className={"p-2 rounded-full bg-my_dark_2 text-my_yellow cursor-pointer scale-90 md:scale-95 lg:scale-100"}><ChevronBack/></i>
+                    <i className={"p-2 rounded-full bg-my_dark_2 text-my_yellow cursor-pointer scale-90 md:scale-95 lg:scale-100"}><ChevronFoward/></i>
                   </div>
               </div>
 
