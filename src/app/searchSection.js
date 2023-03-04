@@ -199,6 +199,7 @@ export  const SearchSection = () => {
                     <motion.button
                       onClick={() => {profileClick()}}
                       onBlur={() => {Setprofile(false)}}
+                      onMouseOut={() => {Setprofile(false)}}
                       variants={clickVariant}
                       whileTap="click"
                       className={" bg-my_dark_2 text-my_yellow rounded-full inline-flex mb-1"}
