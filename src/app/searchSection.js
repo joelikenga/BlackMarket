@@ -46,34 +46,42 @@ export  const SearchSection = () => {
               </div>
 
 
-
-
                 {/*    small screen sidebar contents*/}
               <AnimatePresence>
                   { sidebar && (
                       <motion.div
                           style={{display: sidebar ? "block" : "none"}}
-                          className={" absolute flex top-0 left-0 z-20 w-[100vw] h-[100vh] bg-[rgba(0,0,0,0.5)] "}
+                          className={" absolute  top-0 left-0 z-20 w-[100vw] h-[100vh] bg-[rgba(0,0,0,0.5)] "}
                           variants={opacityVariant}
                           initial="start"
                           animate="stop"
                           exit={{opacity:0,}}
                       >
 
+                          <div className={"flex justify-start gap-4 h-full relative  xl:hidden"}>
+                              <motion.div
+                                  variants={showSidebarVariant}
+                                  initial="start"
+                                  animate="stop"
+                                  exit={{x:-100, opacity:0}}
+                                  className={" bg-my_light h-full w-[18rem] md:w-[24rem] p-4"}
+                              >
 
-                      <motion.div
-                          variants={showSidebarVariant}
-                          initial="start"
-                          animate="stop"
-                          exit={{x:-100, opacity:0}}
-                          className={" bg-my_light h-full w-[17rem] p-4"}
-                      >
 
-                          {/*category contents*/}
-                          <div className={"overflow-y-scroll w-[] mt-10 h-fit w-full"}>
-                                gg
-                          </div>
-                      </motion.div>
+                                  {/*category contents*/}
+                                  <div className={"overflow-y-scroll w-[] mt-14 sm:mt-16 h-fit w-full md:mt-6"}>
+                                        gg
+                                  </div>
+                              </motion.div>
+
+                                  {/*medium screen sidebar close*/}
+                              <div
+                                  onClick={()=>{sidebarClick()}}
+                                  className={"z-30 bg-my_dark mt-3 h-fit top-4 rounded-full  text-my_yellow hidden text-3xl sm:hidden md:block xl:hidden"}>
+                                  <Times className={"m-3 text-4xl rounded-full bg-my_dark text-my_dark_2 "}/>
+                              </div>
+                           </div>
+
 
                       </motion.div>
                   )}
@@ -207,12 +215,12 @@ export  const SearchSection = () => {
                             transition={{duration:0.5, damping:10, type:"spring"}}
                             exit={{opacity:0,x:500}}
                             style={{display: profile ? "block" : "none"}}
-                            className={" absolute right-0 top-10 p-3 rounded w-[15rem] bg-my_dark h-[18rem] max-h-fit"}>
+                            className={"bg-my_dark_2 absolute right-0 top-10 p-4 rounded w-[15rem] h-[18rem] max-h-fit"}>
 
                             <div
-                                className={"flex justify-between font-normal text-[0.8rem]"}>
-                                <Link href={""} className={"px-2 py-1 bg-my_yellow text-my_dark_2 mx-2 rounded inline-flex"}><Signin className={" text-sm mt-[.1rem] mr-[.1rem]"}/>login</Link>
-                                <Link href={""} className={"px-2 py-1 bg-my_dark_2 text-my_yellow ml-1 rounded inline-flex"}><Signout className={"text-sm mt-[.1rem] mr-[.1rem]"}/> Signup</Link>
+                                className={"flex justify-center font-normal text-[0.8rem]"}>
+                                <Link href={""} className={"px-2 py-1 bg-my_dark text-my_dark_2 mx-2 rounded inline-flex"}><Signin className={"text-sm mt-[.1rem] mr-[.1rem]"}/>login</Link>
+                                <Link href={""} className={"px-2 py-1 bg-my_dark text-my_dark_2 ml-1 rounded inline-flex"}><Signout className={"text-sm mt-[.1rem] mr-[.1rem]"}/> Signup</Link>
                             </div>
 
                         </motion.div>
@@ -225,6 +233,13 @@ export  const SearchSection = () => {
 
 
 
+          </div>
+
+          {/*medium screen category popup*/}
+          <div
+            onClick={()=>{sidebarClick()}}
+              className={"bg-my_dark_2 rounded-r-full left-0 text-my_yellow hidden absolute top-20 text-3xl sm:hidden md:block xl:hidden"}>
+              <div className={" py-2 px-3"}> <Bar/> </div>
           </div>
 
       </main>
