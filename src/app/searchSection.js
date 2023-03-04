@@ -23,9 +23,7 @@ export  const SearchSection = () => {
     const sidebarClick = () => {
         Setsidebar(!sidebar);
     }
-    const profileClick = () => {
-        Setprofile(!profile);
-    }
+
 
   return(
       <main className={"text-my_dark_2 fixed w-full top-0 bg-[rgba(16,24,32,0.5)] px-4 py-1  sm:py-3 sm:px-5 z-50 lg:sticky"}>
@@ -189,14 +187,13 @@ export  const SearchSection = () => {
                 <div className={"block relative md:hidden"}>
 
                     <motion.button
-                      onClick={() => {profileClick()}}
                       onFocus={() => {Setprofile(true)}}
                       onBlur={() => {Setprofile(false)}}
                       variants={clickVariant}
                       whileTap="click"
                       className={" bg-my_dark_2 text-my_yellow rounded-full inline-flex mb-1"}
                     >
-                        <UserIcon className={"text-xl m-2"}/>
+                        {profile ? <Times className={"text-xl m-2"}/> : <UserIcon className={"text-xl m-2"}/>}
                     </motion.button>
 
                     {/*small screen user profile content*/}
