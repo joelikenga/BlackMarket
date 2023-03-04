@@ -198,7 +198,8 @@ export  const SearchSection = () => {
 
                     <motion.button
                       onClick={() => {profileClick()}}
-                      onBlur={() => {Setprofile(false)}}
+                      // onBlur={() => {Setprofile(false)}}
+                      onMouseOut={() => {Setprofile(false)}}
                       variants={clickVariant}
                       whileTap="click"
                       className={" bg-my_dark_2 text-my_yellow rounded-full inline-flex mb-1"}
@@ -215,7 +216,7 @@ export  const SearchSection = () => {
                             transition={{duration:0.5, damping:10, type:"spring"}}
                             exit={{opacity:0,x:500}}
                             style={{display: profile ? "block" : "none"}}
-                            className={"bg-my_dark_2 absolute right-0 top-10 p-4 rounded w-[15rem] h-[18rem] max-h-fit"}>
+                            className={"bg-my_dark_2 absolute right-0 top-10 p-4 rounded w-[15rem]  h-fit"}>
 
                             <div
                                 className={"flex justify-center font-normal text-[0.8rem]"}>
