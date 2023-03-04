@@ -1,4 +1,4 @@
-import {Cart, ChevronBack, ChevronFoward, Location, Plus} from "../../public/svgIcons";
+import { ChevronBack, ChevronFoward, Location, Plus} from "../../public/svgIcons";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -17,14 +17,14 @@ export const FeaturedProducts = () => {
 
               <div className={"flex justify-between"}>
                   <div className={"flex items-end"}>
-                      <p className={" border-x-4 border-my_yellow px-2 py-1 text-xl font-normal"}>Featured
-                          <span className={"text-2xl font-medium"}>Products</span>
+                      <p className={" border-x-4 border-my_yellow px-2 py-1  font-normal text-sm sm:text-md md:text-xl"}>Featured
+                          <span className={" font-medium text-md sm:text-lg md:text-2xl"}>Products</span>
                       </p>
-                      <Link className={"ml-3 hover:underline"} href={""}>View All</Link>
+                      <Link className={"ml-3 hover:underline text-sm md:text-md lg:text-lg"} href={""}>more</Link>
                   </div>
-                  <div className={"flex text-2xl"}>
-                    <i className={"p-2 rounded-full bg-my_dark_2 text-my_yellow mr-3 cursor-pointer"}><ChevronBack/></i>
-                    <i className={"p-2 rounded-full bg-my_dark_2 text-my_yellow ml-3 cursor-pointer"}><ChevronFoward/></i>
+                  <div className={"flex gap-3 text-2xl"}>
+                    <i className={"p-2 rounded-full bg-my_dark_2 text-my_yellow cursor-pointer scale-75 md:scale-90 lg:scale-100"}><ChevronBack/></i>
+                    <i className={"p-2 rounded-full bg-my_dark_2 text-my_yellow cursor-pointer scale-75 md:scale-90 lg:scale-100"}><ChevronFoward/></i>
                   </div>
               </div>
 
