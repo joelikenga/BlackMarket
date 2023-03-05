@@ -1,6 +1,9 @@
-import { ChevronBack, ChevronFoward, Location, Plus} from "../../public/svgIcons";
+"use client"
+import {ChevronBack, ChevronFoward, Location, Plus, Times} from "../../public/svgIcons";
 import Image from "next/image";
 import Link from "next/link";
+import {AnimatePresence,motion} from "framer-motion";
+import {useState} from "react";
 
 export const FeaturedProducts = () => {
     const details = [
@@ -11,16 +14,19 @@ export const FeaturedProducts = () => {
         {image:"https://images.unsplash.com/photo-1609001650223-aa7d7edccac1?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80",alt:"iphone 12 pro max",name:"iphone 12 pro max",location:"famagusta",price:5000,amount:1},
         {image:"https://images.unsplash.com/photo-1625948515291-69613efd103f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80",alt:"bluetooth wireless keyboard",name:"bluetooth wireless keyboard",location:"Nicossia",price:800,amount:30},
     ]
+
+    const [content, Setcontents] = useState(false);
+
   return(
       <main className={"mx-6 my-6 rounded text-my_dark_2"}>
           <div>
 
               <div className={"flex justify-between"}>
                   <div className={"flex items-end"}>
-                      <p className={" border-x-4 border-my_yellow px-2 py-0  font-normal text-md sm:text-lg md:text-xl"}>Featured
-                          <span className={" font-medium text-lg sm:text-xl md:text-2xl"}>Products</span>
+                      <p className={" border-x-4 border-my_yellow px-2 py-0  font-normal text-md sm:text-lg md:text-xl"}>New
+                          <span className={" font-medium text-lg sm:text-xl md:text-2xl"}>Stocks</span>
                       </p>
-                      <Link className={"ml-3 hover:underline text-md md:text-lg lg:text-xl"} href={""}>more</Link>
+                      <Link className={"ml-3 hover:underline text-md md:text-lg "} href={""}>more</Link>
                   </div>
                   <div className={"flex gap-3 text-2xl"}>
                     <i className={"p-2 rounded-full bg-my_dark_2 text-my_yellow cursor-pointer scale-90 md:scale-95 lg:scale-100"}><ChevronBack/></i>
@@ -33,7 +39,7 @@ export const FeaturedProducts = () => {
                   {
                       details.map((myDetails,index) => (
 
-                  <Link key={index} href={""} className={"h-fit min-w-fit m-2 rounded bg-my_light relative font-medium z-0 capitalize"}>
+                  <Link key={index} href={""} className={"overflow-hidden h-fit min-w-fit m-2 rounded bg-my_light relative font-medium z-0 capitalize"}>
                       <div className={"absolute top-2 right-2 rounded flex p-2 text-sm bg-my_dark_2 text-my_yellow"}>
                           <Location className={"mr-1"}/>
                           <p translate={"no"}>{myDetails.location}</p>
@@ -49,17 +55,49 @@ export const FeaturedProducts = () => {
                     <div className={"m-4 text-sm"}>
                         <div translate={"no"} className={"border-l-4 pl-2 border-my_yellow"}>{myDetails.name}</div>
 
-                        <div className={"flex justify-between mt-2"}>
-                            <div className={""}>
-                                <p>₺ {myDetails.price}</p>
-                            </div>
-                        </div>
-                        <div className={"flex justify-between"}>
-                             <div translate={"no"} className={"mt-2 font-normal"}>{myDetails.amount} pcs</div>
-                            <button className={"py-1 px-2 rounded bg-my_dark_2 text-my_yellow text-3xl"}>
-                                <Plus/>
-                            </button>
-                        </div>
+
+                            <div className={"flex justify-between mt-2"}>
+                                <div className={""}>
+                                    <p>₺ {myDetails.price}</p>
+                                </div>
+
+                                {/*add button*/}
+
+                                { content ?
+                                    <button
+                                        onClick={()=>{Setcontents(!content)}}
+                                        className={"z-20 p-1 rounded-md bg-my_dark text-my_dark_2 text-3xl rotate-45"}>
+                                        <Times className={"text-my_dark_2  rotate-45 "}/>
+                                     </button>
+                                    :
+                                    <button
+                                        onClick={()=>{Setcontents(!content)}}
+                                        // onClick={()=>{Setcontents((true))}}
+                                        // onBlur={()=>{Setcontents((false))}}
+                                        className={"z-20 p-1 rounded-md bg-my_dark_2 text-my_yellow text-3xl rotate-45"}>
+                                        <Plus className={"rotate-45"}/>
+                                    </button>
+
+                                }
+
+                                </div>
+
+                                <AnimatePresence key={index}>
+                                    {  content &&
+
+                                       <motion.div
+                                           style={{display: content ? "block" : "none"}}
+                                           initial={{opacity:0,y:400, x:300}}
+                                           transition={{damping:10,type:"just", duration:0.3}}
+                                           animate={{opacity:1,y:0, x:0}}
+                                           exit={{opacity:0, y:400, x:300}}
+                                           className={"rounded z-0 absolute bg-my_dark_2 w-full h-full right-0 top-0"}>
+
+                                       </motion.div>
+
+                                    }
+                                </AnimatePresence>
+
                     </div>
                   </Link>
 

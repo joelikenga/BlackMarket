@@ -1,4 +1,4 @@
-import {Cart, Delivery, Headset, HomeIcon, Market, } from "../../public/svgIcons";
+import {Cart, CoinStack, Delivery,  HomeIcon, Market,} from "../../public/svgIcons";
 import Link from "next/link";
 
 export  const FooterContent = () => {
@@ -17,7 +17,7 @@ export  const FooterContent = () => {
                         </div>
 
                         <div className={" text-my_dark mx-3"}>
-                            <Link title={""} href={""}>
+                            <Link title={""} href={"/shop"}>
                                 <Market />
                                 <p className={"text-[0.6rem] leading-5"}>Shop</p>
 
@@ -36,16 +36,16 @@ export  const FooterContent = () => {
 
                         <div className={" text-my_dark mx-3"}>
                             <Link title={""} href={""}>
-                                <Delivery />
-                                <p className={"text-[0.6rem] leading-5"}>order</p>
+                                <CoinStack />
+                                <p className={"text-[0.6rem] leading-5"}>sell</p>
 
                             </Link>
                         </div>
 
                         <div className={" text-my_dark mx-3"}>
                             <Link className={""} title={""} href={""}>
-                                <Headset />
-                                <p className={"text-[0.6rem] m-0 leading-5"}>feeds</p>
+                                <Delivery />
+                                <p className={"text-[0.6rem] m-0 leading-5"}>order</p>
                             </Link>
                         </div>
             </div>
