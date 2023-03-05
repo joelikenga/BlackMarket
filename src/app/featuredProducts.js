@@ -41,8 +41,7 @@ export const FeaturedProducts = () => {
                   {
                       details.map((myDetails,index) => (
 
-                              <motion.Link drag={"x"}
-                  dragConstraints={{ left: 0, right: 300 }}
+                              <Link
                                   href={""} key={index} className={"overflow-hidden h-fit min-w-fit m-2 rounded bg-my_light relative font-medium z-0 capitalize"}>
                                   <div className={"absolute top-2 right-2 rounded flex p-2 text-sm bg-my_dark_2 text-my_yellow"}>
                                       <Location className={"mr-1"}/>
@@ -87,7 +86,7 @@ export const FeaturedProducts = () => {
                                             </div>
 
                                 </div>
-                              </motion.Link>
+                              </Link>
 
                       ))
                   }
