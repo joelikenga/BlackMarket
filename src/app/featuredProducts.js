@@ -3,7 +3,7 @@ import {ChevronBack, ChevronFoward, Location, Plus, Times} from "../../public/sv
 import Image from "next/image";
 import Link from "next/link";
 import {motion} from "framer-motion";
-import {useState} from "react";
+import {useState, useRef, useEffect} from "react";
 
 export const FeaturedProducts = () => {
     const details = [
@@ -15,7 +15,16 @@ export const FeaturedProducts = () => {
         {image:"https://images.unsplash.com/photo-1625948515291-69613efd103f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80",alt:"bluetooth wireless keyboard",name:"bluetooth wireless keyboard",location:"Nicossia",price:800,amount:30},
     ]
 
-    const [content, Setcontents] = useState(false);
+    const [width, Setwidth] = useState(0);
+    const [x, Setx] = useState(0);
+    const carousel = useRef();
+
+    useEffect(() => {
+        Setwidth(carousel.current.scrollWidth - carousel.current.offsetWidth);
+    },[])
+
+   let t = width / details.length;
+    console.table(width,x,t);
 
   return(
       <main className={"mx-6 my-6 rounded text-my_dark_2"}>
@@ -29,68 +38,63 @@ export const FeaturedProducts = () => {
                       <Link className={"ml-3 hover:underline text-md md:text-lg "} href={""}>more</Link>
                   </div>
                   <div className={"flex gap-3 text-2xl"}>
-                    <i className={"p-2 rounded-full bg-my_dark_2 text-my_yellow cursor-pointer scale-90 md:scale-95 lg:scale-100"}><ChevronBack/></i>
-                    <i className={"p-2 rounded-full bg-my_dark_2 text-my_yellow cursor-pointer scale-90 md:scale-95 lg:scale-100"}><ChevronFoward/></i>
+                    <i onClick={()=>{Setx(x == 0 ? 0 : x + (t+t))}} className={"p-2 rounded-full bg-my_dark_2 text-my_yellow cursor-pointer scale-90 md:scale-95 lg:scale-100"}><ChevronBack/></i>
+                    <i onClick={()=>{Setx( width == -x ? 0 : x - (t+t) )}} className={"p-2 rounded-full bg-my_dark_2 text-my_yellow cursor-pointer scale-90 md:scale-95 lg:scale-100"}><ChevronFoward/></i>
                   </div>
               </div>
 
-              <motion.div
-
-                  className={"flex gap-3 my-6 rounded w-full bg-my_dark overflow-x-hidden"}>
-
-                  {
-                      details.map((myDetails,index) => (
-
-                              <Link
-                                  href={""} key={index} className={"overflow-hidden h-fit min-w-fit m-2 rounded bg-my_light relative font-medium z-0 capitalize"}>
-                                  <div className={"absolute top-2 right-2 rounded flex p-2 text-sm bg-my_dark_2 text-my_yellow"}>
-                                      <Location className={"mr-1"}/>
-                                      <p translate={"no"}>{myDetails.location}</p>
-                                  </div>
-                                <Image
-                                    className={"h-60 w-60 shadow-my_dark shadow-lg object-cover m-4 rounded"}
-                                    src={myDetails.image}
-                                    alt={myDetails.alt}
-                                    width={300}
-                                    height={300}
-                                />
-
-                                <div className={"m-4 text-sm"}>
-                                    <div translate={"no"} className={"border-l-4 pl-2 border-my_yellow"}>{myDetails.name}</div>
 
 
-                                        <div className={"flex justify-between mt-2"}>
-                                            <div className={""}>
-                                                <p>₺ {myDetails.price}</p>
+              <div className={"flex gap-3 my-6 rounded w-full bg-my_dark overflow-x-hidden"}>
+
+                     <motion.div ref={carousel} className={"flex gap-3 rounded w-full bg-my_dark"} animate={{x:x}} drag={"x"} dragConstraints={{right:0, left:-width}}>
+                          {
+                              details.map((myDetails,index) => {
+
+                                  return (
+
+                                      <Link href={""} key={index} className={"snap-x overflow-hidden h-fit min-w-fit m-2 rounded bg-my_light relative font-medium z-0 capitalize"}>
+
+                                          <div className={"absolute top-2 right-2 rounded flex p-2 text-sm bg-my_dark_2 text-my_yellow"}>
+                                              <Location className={"mr-1"}/>
+                                              <p translate={"no"}>{myDetails.location}</p>
+                                          </div>
+
+                                          <Image
+                                            className={"h-60 w-60 shadow-my_dark shadow-lg object-cover m-4 rounded"}
+                                            src={myDetails.image}
+                                            alt={myDetails.alt}
+                                            width={300}
+                                            height={300}
+                                           />
+
+                                          <div className={"m-4 text-sm"}>
+
+                                            <div translate={"no"} className={"border-l-4 pl-2 border-my_yellow"}>
+                                                {myDetails.name}
                                             </div>
 
-                                            {/*add button*/}
+                                            <div className={"flex justify-between mt-2"}>
+                                                <div className={""}>
+                                                    <p>₺ {myDetails.price}</p>
+                                                </div>
 
-                                            { content ?
-                                                <button
-                                                    onClick={()=>{Setcontents(!content)}}
-                                                    className={"z-20 p-1 rounded-md bg-my_dark text-my_dark_2 text-3xl rotate-45"}>
-                                                    <Times className={"text-my_dark_2  rotate-45 "}/>
-                                                 </button>
-                                                :
-                                                <motion.button
-                                                    initial={{rotate:-45}}
-                                                    whileTap={{rotate:-90}}
-                                                    transition={{type:"spring"}}
-                                                    className={"z-20 p-1 rounded-md bg-my_dark_2 text-my_yellow text-3xl"}>
+                                                {/*add button*/}
+
+                                                <motion.button initial={{rotate:-45}} whileTap={{rotate:-90}} transition={{type:"spring"}} className={"z-20 p-1 rounded-md bg-my_dark_2 text-my_yellow text-3xl"}>
                                                     <Plus className={"rotate-45"}/>
                                                 </motion.button>
 
-                                            }
 
                                             </div>
+                                          </div>
 
-                                </div>
-                              </Link>
-
-                      ))
-                  }
-              </motion.div>
+                                      </Link>
+                                  )
+                              })
+                          }
+                     </motion.div>
+              </div>
           </div>
       </main>
   );

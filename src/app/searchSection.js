@@ -239,7 +239,7 @@ export  const SearchSection = () => {
           {/*medium screen category popup*/}
           <div
             onClick={()=>{sidebarClick()}}
-              className={"bg-my_dark_2 rounded-r-full left-0 text-my_yellow hidden absolute top-20 text-3xl sm:hidden md:block xl:hidden"}>
+              className={"bg-my_dark_2 rounded left-6 text-my_yellow hidden absolute top-24 text-3xl sm:hidden md:block xl:hidden"}>
               <div className={" py-2 px-3"}> <Bar/> </div>
           </div>
 
