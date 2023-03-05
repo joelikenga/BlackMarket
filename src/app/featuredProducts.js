@@ -87,7 +87,6 @@ export const FeaturedProducts = () => {
                                                     {/*</Link>*/}
                                                 </motion.button>
 
-
                                             </div>
                                           </div>
 
