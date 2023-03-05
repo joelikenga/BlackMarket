@@ -34,18 +34,16 @@ export const FeaturedProducts = () => {
                   </div>
               </div>
 
-              <div  className={"flex gap-3 my-6 rounded w-full bg-my_dark overflow-x-hidden"}>
+              <motion.div
+
+                  className={"flex gap-3 my-6 rounded w-full bg-my_dark overflow-x-hidden"}>
 
                   {
                       details.map((myDetails,index) => (
 
-                          <motion.div
-                              drag={"x"}
-                              dragConstraints={{ left: 0, right: 300 }}
-                              className={"overflow-hidden h-fit min-w-fit m-2 rounded bg-my_light relative font-medium z-0 capitalize"}
-                              key={index}>
-
-                              <Link href={""} >
+                              <motion.Link drag={"x"}
+                  dragConstraints={{ left: 0, right: 300 }}
+                                  href={""} key={index} className={"overflow-hidden h-fit min-w-fit m-2 rounded bg-my_light relative font-medium z-0 capitalize"}>
                                   <div className={"absolute top-2 right-2 rounded flex p-2 text-sm bg-my_dark_2 text-my_yellow"}>
                                       <Location className={"mr-1"}/>
                                       <p translate={"no"}>{myDetails.location}</p>
@@ -89,12 +87,11 @@ export const FeaturedProducts = () => {
                                             </div>
 
                                 </div>
-                              </Link>
+                              </motion.Link>
 
-                         </motion.div>
                       ))
                   }
-              </div>
+              </motion.div>
           </div>
       </main>
   );
