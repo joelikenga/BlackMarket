@@ -80,10 +80,11 @@ export const FeaturedProducts = () => {
                                                 </div>
 
                                                 {/*add button*/}
-
-                                                <motion.button initial={{rotate:-45}} whileTap={{rotate:-90}} transition={{type:"spring"}} className={"z-20 p-1.5 rounded-md bg-my_dark_2 text-my_yellow text-3xl"}>
-                                                    <Plus className={"rotate-45"}/>
-                                                </motion.button>
+                                                <Link href={""}>
+                                                    <motion.button initial={{rotate:-45}} whileTap={{rotate:-90}} transition={{type:"spring"}} className={"z-20 p-1.5 rounded-md bg-my_dark_2 text-my_yellow text-3xl"}>
+                                                        <Plus className={"rotate-45"}/>
+                                                    </motion.button>
+                                                </Link>
 
 
                                             </div>
