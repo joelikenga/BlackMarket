@@ -16,15 +16,11 @@ export const FeaturedProducts = () => {
     ]
 
     const [width, Setwidth] = useState(0);
-    const [x, Setx] = useState(0);
     const carousel = useRef();
 
     useEffect(() => {
         Setwidth(carousel.current.scrollWidth - carousel.current.offsetWidth);
     },[])
-
-   let t = width / details.length;
-    console.table(width,x,t);
 
   return(
       <main className={"mx-6 my-6 rounded text-my_dark_2"}>
@@ -38,8 +34,8 @@ export const FeaturedProducts = () => {
                       <Link className={"ml-3 hover:underline text-md md:text-lg "} href={""}>more</Link>
                   </div>
                   <div className={"flex gap-3 text-2xl"}>
-                    <i onClick={()=>{Setx(x + 300)}} className={"p-2 rounded-full bg-my_dark_2 text-my_yellow cursor-pointer scale-90 md:scale-95 lg:scale-100"}><ChevronBack/></i>
-                    <i onClick={()=>{Setx( x - 300)}} className={"p-2 rounded-full bg-my_dark_2 text-my_yellow cursor-pointer scale-90 md:scale-95 lg:scale-100"}><ChevronFoward/></i>
+                    <i onClick={()=>{}} className={"p-2 rounded-full bg-my_dark_2 text-my_yellow cursor-pointer scale-90 md:scale-95 lg:scale-100"}><ChevronBack/></i>
+                    <i onClick={()=>{}} className={"p-2 rounded-full bg-my_dark_2 text-my_yellow cursor-pointer scale-90 md:scale-95 lg:scale-100"}><ChevronFoward/></i>
                   </div>
               </div>
 
