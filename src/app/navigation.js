@@ -1,6 +1,7 @@
-// "use client"
+"use client"
 import {AppStore, Headset, Delivery, Market, Setting, CoinStack} from "../../public/svgIcons";
 import Link from "next/link";
+import {motion} from "framer-motion";
 
 export const Navigation = () => {
 
@@ -30,8 +31,14 @@ export const Navigation = () => {
                 <div className={"inline-block  text-my_yellow font-bold"}>
 
                    {/* categories dropdown button*/}
-                   <div className={"flex justify-center rounded py-3 px-1 text-sm text-center bg-my_dark_2"}>
-                        <AppStore className={"text-xl mr-2"}/>
+                   <div className={"flex justify-center cursor-pointer rounded py-3 px-1 text-sm text-center bg-my_dark_2"}>
+                        <motion.div
+                            animate={{rotate:36 }}
+                            whileHover={{}}
+                            transition={{delay:0.8, type:"spring"}}
+                        >
+                            <AppStore className={"text-xl mr-"}/>
+                        </motion.div>
                         <div>Categories</div>
                    </div>
 
@@ -39,11 +46,17 @@ export const Navigation = () => {
                     <div className={"mt-6"}>
                         {
                             navLinks.map((navs,index)=>(
-                        <Link key={index} className={"my-4 text-sm text-center py-3 px-8 no-underline text-my_dark_2 rounded flex"} href={navs.link}>
-                                <div className={"text-2xl mx-2"}>{navs.icon}</div>
-                                <div>{navs.navName}</div>
-                        </Link>
+                                <motion.div
+                                    whileHover={{scale:1.2}}
+                                    transition={{delay:0, type:"spring"}}
+                                    key={index}>
+                                    <Link
 
+                                        className={"my-4 text-sm text-center py-3 px-8 no-underline text-my_dark_2 rounded flex"} href={navs.link}>
+                                            <div className={"text-2xl mx-2"}>{navs.icon}</div>
+                                            <div>{navs.navName}</div>
+                                    </Link>
+                                </motion.div>
                             ))
                         }
                     </div>

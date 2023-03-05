@@ -2,7 +2,7 @@
 import {ChevronBack, ChevronFoward, Location, Plus, Times} from "../../public/svgIcons";
 import Image from "next/image";
 import Link from "next/link";
-import {AnimatePresence,motion} from "framer-motion";
+import {motion} from "framer-motion";
 import {useState} from "react";
 
 export const FeaturedProducts = () => {
@@ -23,8 +23,8 @@ export const FeaturedProducts = () => {
 
               <div className={"flex justify-between"}>
                   <div className={"flex items-end"}>
-                      <p className={" border-x-4 border-my_yellow px-2 py-0  font-normal text-md sm:text-lg md:text-xl"}>New
-                          <span className={" font-medium text-lg sm:text-xl md:text-2xl"}>Stocks</span>
+                      <p className={" border-x-4 border-my_yellow px-2 py-0  font-normal text-md sm:text-lg md:text-xl"}>Latest
+                          <span className={" font-medium text-lg sm:text-xl md:text-2xl"}> Stocks</span>
                       </p>
                       <Link className={"ml-3 hover:underline text-md md:text-lg "} href={""}>more</Link>
                   </div>
@@ -70,33 +70,21 @@ export const FeaturedProducts = () => {
                                         <Times className={"text-my_dark_2  rotate-45 "}/>
                                      </button>
                                     :
-                                    <button
-                                        onClick={()=>{Setcontents(!content)}}
+                                    <motion.button
+                                        initial={{rotate:-45}}
+                                        whileTap={{rotate:-90}}
+                                        transition={{type:"spring"}}
+                                        // onClick={()=>{Setcontents(!content)}}
                                         // onClick={()=>{Setcontents((true))}}
                                         // onBlur={()=>{Setcontents((false))}}
-                                        className={"z-20 p-1 rounded-md bg-my_dark_2 text-my_yellow text-3xl rotate-45"}>
+                                        className={"z-20 p-1 rounded-md bg-my_dark_2 text-my_yellow text-3xl"}>
                                         <Plus className={"rotate-45"}/>
-                                    </button>
+                                    </motion.button>
 
                                 }
 
                                 </div>
 
-                                <AnimatePresence key={index}>
-                                    {  content &&
-
-                                       <motion.div
-                                           style={{display: content ? "block" : "none"}}
-                                           initial={{opacity:0,y:400, x:300}}
-                                           transition={{damping:10,type:"just", duration:0.3}}
-                                           animate={{opacity:1,y:0, x:0}}
-                                           exit={{opacity:0, y:400, x:300}}
-                                           className={"rounded z-0 absolute bg-my_dark_2 w-full h-full right-0 top-0"}>
-
-                                       </motion.div>
-
-                                    }
-                                </AnimatePresence>
 
                     </div>
                   </Link>
