@@ -38,7 +38,7 @@ export const FeaturedProducts = () => {
                       <Link className={"ml-3 hover:underline text-md md:text-lg "} href={""}>more</Link>
                   </div>
                   <div className={"flex gap-3 text-2xl"}>
-                    <i onClick={()=>{Setx(x <= 0 ? 0 : x + 300)}} className={"p-2 rounded-full bg-my_dark_2 text-my_yellow cursor-pointer scale-90 md:scale-95 lg:scale-100"}><ChevronBack/></i>
+                    <i onClick={()=>{Setx(x + 300)}} className={"p-2 rounded-full bg-my_dark_2 text-my_yellow cursor-pointer scale-90 md:scale-95 lg:scale-100"}><ChevronBack/></i>
                     <i onClick={()=>{Setx( x - 300)}} className={"p-2 rounded-full bg-my_dark_2 text-my_yellow cursor-pointer scale-90 md:scale-95 lg:scale-100"}><ChevronFoward/></i>
                   </div>
               </div>
@@ -82,9 +82,9 @@ export const FeaturedProducts = () => {
                                                 {/*add button*/}
 
                                                 <motion.button initial={{rotate:-45}} whileTap={{rotate:-90}} transition={{type:"spring"}} className={"z-20 p-1.5 rounded-md bg-my_dark_2 text-my_yellow text-3xl"}>
-                                                    <Link href={"hhhghghg"}>
+                                                    {/*<Link href={"hhhghghg"}>*/}
                                                         <Plus className={"rotate-45"}/>
-                                                    </Link>
+                                                    {/*</Link>*/}
                                                 </motion.button>
 
 
