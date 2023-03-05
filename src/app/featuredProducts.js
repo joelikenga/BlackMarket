@@ -34,61 +34,64 @@ export const FeaturedProducts = () => {
                   </div>
               </div>
 
-              <div  className={"flex gap-3 my-6 rounded w-full bg-my_dark overflow-x-scroll"}>
+              <div  className={"flex gap-3 my-6 rounded w-full bg-my_dark overflow-x-hidden"}>
 
                   {
                       details.map((myDetails,index) => (
 
-                  <Link key={index} href={""} className={"overflow-hidden h-fit min-w-fit m-2 rounded bg-my_light relative font-medium z-0 capitalize"}>
-                      <div className={"absolute top-2 right-2 rounded flex p-2 text-sm bg-my_dark_2 text-my_yellow"}>
-                          <Location className={"mr-1"}/>
-                          <p translate={"no"}>{myDetails.location}</p>
-                      </div>
-                    <Image
-                        className={"h-60 w-60 shadow-my_dark shadow-lg object-cover m-4 rounded"}
-                        src={myDetails.image}
-                        alt={myDetails.alt}
-                        width={300}
-                        height={300}
-                    />
+                          <motion.div
+                              drag={"x"}
+                              dragConstraints={{ left: 0, right: 300 }}
+                              className={"overflow-hidden h-fit min-w-fit m-2 rounded bg-my_light relative font-medium z-0 capitalize"}
+                              key={index}>
 
-                    <div className={"m-4 text-sm"}>
-                        <div translate={"no"} className={"border-l-4 pl-2 border-my_yellow"}>{myDetails.name}</div>
+                              <Link href={""} >
+                                  <div className={"absolute top-2 right-2 rounded flex p-2 text-sm bg-my_dark_2 text-my_yellow"}>
+                                      <Location className={"mr-1"}/>
+                                      <p translate={"no"}>{myDetails.location}</p>
+                                  </div>
+                                <Image
+                                    className={"h-60 w-60 shadow-my_dark shadow-lg object-cover m-4 rounded"}
+                                    src={myDetails.image}
+                                    alt={myDetails.alt}
+                                    width={300}
+                                    height={300}
+                                />
+
+                                <div className={"m-4 text-sm"}>
+                                    <div translate={"no"} className={"border-l-4 pl-2 border-my_yellow"}>{myDetails.name}</div>
 
 
-                            <div className={"flex justify-between mt-2"}>
-                                <div className={""}>
-                                    <p>₺ {myDetails.price}</p>
+                                        <div className={"flex justify-between mt-2"}>
+                                            <div className={""}>
+                                                <p>₺ {myDetails.price}</p>
+                                            </div>
+
+                                            {/*add button*/}
+
+                                            { content ?
+                                                <button
+                                                    onClick={()=>{Setcontents(!content)}}
+                                                    className={"z-20 p-1 rounded-md bg-my_dark text-my_dark_2 text-3xl rotate-45"}>
+                                                    <Times className={"text-my_dark_2  rotate-45 "}/>
+                                                 </button>
+                                                :
+                                                <motion.button
+                                                    initial={{rotate:-45}}
+                                                    whileTap={{rotate:-90}}
+                                                    transition={{type:"spring"}}
+                                                    className={"z-20 p-1 rounded-md bg-my_dark_2 text-my_yellow text-3xl"}>
+                                                    <Plus className={"rotate-45"}/>
+                                                </motion.button>
+
+                                            }
+
+                                            </div>
+
                                 </div>
+                              </Link>
 
-                                {/*add button*/}
-
-                                { content ?
-                                    <button
-                                        onClick={()=>{Setcontents(!content)}}
-                                        className={"z-20 p-1 rounded-md bg-my_dark text-my_dark_2 text-3xl rotate-45"}>
-                                        <Times className={"text-my_dark_2  rotate-45 "}/>
-                                     </button>
-                                    :
-                                    <motion.button
-                                        initial={{rotate:-45}}
-                                        whileTap={{rotate:-90}}
-                                        transition={{type:"spring"}}
-                                        // onClick={()=>{Setcontents(!content)}}
-                                        // onClick={()=>{Setcontents((true))}}
-                                        // onBlur={()=>{Setcontents((false))}}
-                                        className={"z-20 p-1 rounded-md bg-my_dark_2 text-my_yellow text-3xl"}>
-                                        <Plus className={"rotate-45"}/>
-                                    </motion.button>
-
-                                }
-
-                                </div>
-
-
-                    </div>
-                  </Link>
-
+                         </motion.div>
                       ))
                   }
               </div>
