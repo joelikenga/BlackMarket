@@ -15,12 +15,12 @@ export const FeaturedProducts = () => {
         {image:"https://images.unsplash.com/photo-1625948515291-69613efd103f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80",alt:"bluetooth wireless keyboard",name:"bluetooth wireless keyboard",location:"Nicossia",price:800,amount:30},
     ]
 
-    const [width, Setwidth] = useState(0);
-    const carousel = useRef();
+    // const [width, Setwidth] = useState(0);
+    // const carousel = useRef();
 
-    useEffect(() => {
+    // useEffect(() => {
         // Setwidth(carousel.current.scrollWidth - carousel.current.offsetWidth);
-    },[])
+    // },[])
 
 
   return(
@@ -44,11 +44,11 @@ export const FeaturedProducts = () => {
 
               <div className={"flex gap-3 my-6 rounded w-full bg-my_dark overflow-x-hidden"}>
 
-                     <motion.div ref={carousel} className={"flex gap-3 rounded w-full bg-my_dark"}  drag={"x"} dragConstraints={{right:0, left:-width}}>
+                     <motion.div  className={"flex gap-3 rounded w-full bg-my_dark"}  drag={"x"} dragConstraints={{right:0, left:-width}}>
                           {
-                              details.map((myDetails,index) => {
+                              details.map((myDetails,index) =>
 
-                                  return (
+                                  (
 
                                       <Link href={""} key={index} className={"snap-x overflow-hidden h-fit min-w-fit m-2 rounded bg-my_light relative font-medium z-0 capitalize"}>
 
@@ -88,7 +88,7 @@ export const FeaturedProducts = () => {
 
                                       </Link>
                                   )
-                              })
+                              )
                           }
                      </motion.div>
               </div>
