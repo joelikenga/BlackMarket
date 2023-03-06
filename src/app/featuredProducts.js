@@ -44,7 +44,7 @@ export const FeaturedProducts = () => {
 
               <div className={"flex gap-3 my-6 rounded w-full bg-my_dark overflow-x-hidden"}>
 
-                     <motion.div  className={"flex gap-3 rounded w-full bg-my_dark"}  drag={"x"} dragConstraints={{right:0, left:-width}}>
+                     <motion.div ref={carousel} className={"flex gap-3 rounded w-full bg-my_dark"}  drag={"x"} dragConstraints={{right:0, left:-width}}>
                           {
                               details.map((myDetails,index) =>
 
