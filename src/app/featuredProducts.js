@@ -29,8 +29,8 @@ export const FeaturedProducts = () => {
 
               <div className={"flex justify-between"}>
                   <div className={"flex items-end"}>
-                      <p className={" border-x-4 border-my_yellow px-2 py-0  font-normal text-md sm:text-lg md:text-xl"}>Latest
-                          <span className={" font-medium text-lg sm:text-xl md:text-2xl"}> Stocks</span>
+                      <p className={" border-x-4 border-my_yellow px-2 py-0  font-normal text-md sm:text-lg md:text-xl"}>New
+                          <span className={" font-medium text-lg sm:text-xl md:text-2xl"}> Products</span>
                       </p>
                       <Link className={"ml-3 hover:underline text-md md:text-lg "} href={""}>more</Link>
                   </div>
