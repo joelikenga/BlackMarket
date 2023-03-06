@@ -16,6 +16,7 @@ export const FeaturedProducts = () => {
     ]
 
     const [width, Setwidth] = useState(0);
+    const [x, Setx] = useState(0);
     const carousel = useRef();
 
     useEffect(() => {
@@ -35,8 +36,8 @@ export const FeaturedProducts = () => {
                       <Link className={"ml-3 hover:underline text-md md:text-lg "} href={""}>more</Link>
                   </div>
                   <div className={"flex gap-3 text-2xl"}>
-                    <i className={"p-2 rounded-full bg-my_dark_2 text-my_yellow cursor-pointer scale-90 md:scale-95 lg:scale-100"}><ChevronBack/></i>
-                    <i  className={"p-2 rounded-full bg-my_dark_2 text-my_yellow cursor-pointer scale-90 md:scale-95 lg:scale-100"}><ChevronFoward/></i>
+                    <i onClick={()=>{Setx(x + 300)}} className={"p-2 rounded-full bg-my_dark_2 text-my_yellow cursor-pointer scale-90 md:scale-95 lg:scale-100"}><ChevronBack/></i>
+                    <i onClick={()=>{Setx(x - 300)}}  className={"p-2 rounded-full bg-my_dark_2 text-my_yellow cursor-pointer scale-90 md:scale-95 lg:scale-100"}><ChevronFoward/></i>
                   </div>
               </div>
 
@@ -44,7 +45,7 @@ export const FeaturedProducts = () => {
 
               <div className={"flex gap-3 my-6 rounded w-full bg-my_dark overflow-x-hidden"}>
 
-                     <motion.div ref={carousel} className={"flex gap-3 rounded w-full bg-my_dark"}  drag={"x"} dragConstraints={{right:0, left:-width}}>
+                     <motion.div ref={carousel} className={"flex gap-3 rounded w-full bg-my_dark"} animate={{x:x}} drag={"x"} dragConstraints={{right:0, left:-width}}>
                           {
                               details.map((myDetails,index) =>
 
