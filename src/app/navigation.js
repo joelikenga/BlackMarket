@@ -32,13 +32,10 @@ export const Navigation = () => {
 
                    {/* categories dropdown button*/}
                    <div className={"flex justify-center cursor-pointer rounded py-3 px-1 text-sm text-center bg-my_dark_2"}>
-                        <motion.div
-                            animate={{rotate:36 }}
-                            whileHover={{}}
-                            transition={{delay:0.8, type:"spring"}}
-                        >
+                        <div>
                             <AppStore className={"text-xl mr-"}/>
-                        </motion.div>
+                        </div>
+
                         <div>Categories</div>
                    </div>
 
@@ -47,8 +44,8 @@ export const Navigation = () => {
                         {
                             navLinks.map((navs,index)=>(
                                 <motion.div
-                                    whileHover={{scale:1.2}}
-                                    transition={{delay:0, type:"spring"}}
+                                    whileHover={{scale:1.1}}
+                                    transition={{delay:0,}}
                                     key={index}>
                                     <Link
 
