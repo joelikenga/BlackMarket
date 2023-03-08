@@ -17,11 +17,11 @@ export  const HeroSection = () => {
                   <div className={"flex"}>
 
                       <div>
-                          <Image
-                              className={"w-[]"}
-                              src={""}
-                              alt={"images"}
-                          />
+                          {/*<Image*/}
+                          {/*    className={"w-[]"}*/}
+                          {/*    src={""}*/}
+                          {/*    alt={"images"}*/}
+                          {/*/>*/}
                       </div>
 
                   </div>
