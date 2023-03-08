@@ -12,16 +12,16 @@ export  const HeroSection = () => {
               </div>
 
           {/*    second grid section*/}
-              <div className={"col-span-1"}>
+              <div className={"col-span-1 h-[20rem]"}>
 
                   <div className={"flex"}>
 
                       <div>
-                          {/*<Image*/}
-                          {/*    className={""}*/}
-                          {/*    src={""}*/}
-                          {/*    alt={"images"}*/}
-                          {/*/>*/}
+                          <Image
+                              className={"w-[]"}
+                              src={""}
+                              alt={"images"}
+                          />
                       </div>
 
                   </div>

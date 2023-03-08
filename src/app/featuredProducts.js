@@ -68,6 +68,7 @@ export const FeaturedProducts = () => {
                                             alt={myDetails.alt}
                                             width={300}
                                             height={300}
+                                            priority
                                            />
 
                                           <div className={"m-4 text-sm"}>
