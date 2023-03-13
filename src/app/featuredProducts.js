@@ -55,7 +55,7 @@ export const FeaturedProducts = () => {
 
                                   return(
 
-                                      <Link href={""} key={index} className={"snap-x h-fit min-w-fit m-2 rounded bg-my_light relative font-medium z-0 capitalize"}>
+                                      <div  key={index} className={"snap-x h-fit min-w-fit m-2 rounded bg-my_light relative font-medium z-0 capitalize"}>
 
                                           <div className={"absolute top-2 right-2 rounded flex p-2 text-sm bg-my_dark_2 text-my_yellow"}>
                                               <Location className={"mr-1"}/>
@@ -83,16 +83,16 @@ export const FeaturedProducts = () => {
                                                 </div>
 
                                                 {/*add button*/}
-
-                                                <motion.button initial={{rotate:-45}} whileTap={{rotate:-90}} transition={{type:"spring"}} className={"z-20 p-1 rounded-md bg-my_dark_2 text-my_yellow text-3xl"}>
-                                                    <Plus className={"rotate-45"}/>
-                                                </motion.button>
-
+                                                <Link href={""}>
+                                                    <motion.button initial={{rotate:-45}} whileTap={{rotate:-90}} transition={{type:"spring"}} className={"z-20 p-1 rounded-md bg-my_dark_2 text-my_yellow text-2xl"}>
+                                                        <Plus className={"rotate-45"}/>
+                                                    </motion.button>
+                                                </Link>
 
                                             </div>
                                           </div>
 
-                                      </Link>
+                                      </div>
                                   )
                               }
                               )
