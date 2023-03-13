@@ -84,7 +84,7 @@ export const FeaturedProducts = () => {
 
                                                 {/*add button*/}
                                                 <Link href={""}>
-                                                    <motion.button initial={{rotate:-45}} whileTap={{rotate:-90}} transition={{type:"spring"}} className={"z-20 p-1 rounded-md bg-my_dark_2 text-my_yellow text-2xl"}>
+                                                    <motion.button initial={{rotate:-45}} whileTap={{rotate:-90}} transition={{type:"spring"}} className={"z-20 p-2 rounded-md bg-my_dark_2 text-my_yellow text-2xl"}>
                                                         <Plus className={"rotate-45"}/>
                                                     </motion.button>
                                                 </Link>
