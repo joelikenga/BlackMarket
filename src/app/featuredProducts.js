@@ -29,7 +29,7 @@ export const FeaturedProducts = () => {
 
 
   return(
-      <main className={"mx-6 my-6 rounded text-my_dark_2"}>
+      <main className={" mx-6 my-6 rounded text-my_dark_2"}>
           <div>
 
               <div className={"flex justify-between"}>
