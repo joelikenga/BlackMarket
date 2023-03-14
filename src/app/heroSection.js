@@ -10,47 +10,20 @@ const autoSlides = [
 export  const HeroSection = () => {
 
     return(
-      <main className={" my-4 mt-16 sm:mt-20  lg:mt-1 overflow-hidden"}>
-          <div className={"grid grid-cols-2"}>
+      <main className={" my-4 mt-16 sm:mt-20 lg:h-[25rem] lg:mt-1 overflow-hidden"}>
+          <div className={"grid grid-cols-3"}>
 
           {/*    first grid section*/}
-              <div className={"col-span-1"}>
+              <div className={"col-span-1 h-[25rem]"}>
 
               </div>
 
           {/*    second grid section*/}
-              <div className={"col-span-1 h-[20rem] "}>
+              <div className={"col-span-2 h-[25rem] "}>
 
-                  <div className={"flex gap-3 rotate-12 -skew-x-[8deg]"}>
+                  <div className={"flex gap-3 rotate-12 -skew-x-[10deg] w-fit -mt-10 "}>
 
-                      <div className={"flex flex-wrap gap-2 w-[20rem] overflow-auto"}>
-
-                          {autoSlides.map((content, index) => {
-                              return(
-
-                          <div key={index} className={""}>
-                              <Image
-                                  className={"w-full rounded-lg"}
-                                  src={content.image}
-                                  alt={"images"}
-                                  width={200}
-                                  height={0}
-                              />
-                          </div>
-
-                              )
-                          })
-                          }
-                      </div>
-
-
-
-                  </div>
-
-
-                  <div className={"flex gap-3 rotate-12 -skew-x-[8deg]"}>
-
-                      <div className={"flex flex-wrap gap-2 w-[20rem] overflow-auto"}>
+                      <div className={"flex flex-wrap gap-3 w-[14rem] overflow-auto"}>
 
                           {autoSlides.map((content, index) => {
                               return(
@@ -62,6 +35,7 @@ export  const HeroSection = () => {
                                   alt={"images"}
                                   width={200}
                                   height={0}
+                                  priority
                               />
                           </div>
 
@@ -72,9 +46,53 @@ export  const HeroSection = () => {
 
 
 
+                      <div className={"flex flex-wrap gap-2 w-[14rem] overflow-auto"}>
+
+                          {autoSlides.map((content, index) => {
+                              return(
+
+                          <div key={index} className={""}>
+                              <Image
+                                  className={"w-full rounded-lg"}
+                                  src={content.image}
+                                  alt={"images"}
+                                  width={200}
+                                  height={0}
+                                  priority
+                              />
+                          </div>
+
+                              )
+                          })
+                          }
+                      </div>
+
+
+                      <div className={"flex flex-wrap gap-2 w-[14rem] overflow-auto"}>
+
+                          {autoSlides.map((content, index) => {
+                              return(
+
+                          <div key={index} className={""}>
+                              <Image
+                                  className={"w-full rounded-lg"}
+                                  src={content.image}
+                                  alt={"images"}
+                                  width={200}
+                                  height={0}
+                                  priority
+                              />
+                          </div>
+
+                              )
+                          })
+                          }
+                      </div>
+
                   </div>
 
-              </div>
+                  </div>
+
           </div>
       </main>
   );
