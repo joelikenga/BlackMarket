@@ -21,7 +21,7 @@ export  const HeroSection = () => {
           {/*    second grid section*/}
               <div className={"col-span-2 h-[25rem] "}>
 
-                  <div className={"flex gap-3 rotate-12 -skew-x-[10deg] w-fit -mt-10 "}>
+                  <div className={"flex gap-3 rotate-12  w-fit -mt-10 "}>
 
                       <div className={"flex flex-wrap gap-3 w-[13rem] overflow-auto"}>
 
