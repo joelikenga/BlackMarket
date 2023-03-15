@@ -65,3 +65,11 @@ export const  searchModal= {
     }
 }
 
+// export const autoSlider = {
+//     start:{
+//         y:0
+//     },
+//     stop:{
+//         y:-500
+//     }
+// }
