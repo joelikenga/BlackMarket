@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 
-export const AllProductsSample = () =>{
+export const TopCategories = () =>{
         const  details = [
         {image:"https://images.unsplash.com/photo-1542838132-92c53300491e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80", name:"groceries"},
         {image:"https://images.unsplash.com/photo-1468495244123-6c6c332eeece?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=721&q=80", name:"phones and tablets"},

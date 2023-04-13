@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import {ChevronBack, ChevronFoward} from "../../public/svgIcons";
 
-export const FrequentPurchase = () => {
+export const BestSeller = () => {
     const  details = [
         {image:"https://images.unsplash.com/photo-1587017539504-67cfbddac569?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=435&q=80", name:"Versace Eros  "},
         {image:"https://images.unsplash.com/photo-1604494319203-d1995ee6b2dd?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=435&q=80", name:"Prada milano Handbag"},

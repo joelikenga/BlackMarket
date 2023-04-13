@@ -19,7 +19,7 @@ export  const FooterContent = () => {
                         <div className={" text-my_dark mx-3"}>
                             <Link title={""} href={"/shop"}>
                                 <Market />
-                                <p className={"text-[0.6rem] leading-5"}>Shop</p>
+                                {/*<p className={"text-[0.6rem] leading-5"}>Shop</p>*/}
 
                             </Link>
                         </div>
@@ -37,7 +37,7 @@ export  const FooterContent = () => {
                         <div className={" text-my_dark mx-3"}>
                             <Link title={""} href={""}>
                                 <CoinStack />
-                                <p className={"text-[0.6rem] leading-5"}>sell</p>
+                                {/*<p className={"text-[0.6rem] leading-5"}>sell</p>*/}
 
                             </Link>
                         </div>
@@ -45,7 +45,7 @@ export  const FooterContent = () => {
                         <div className={" text-my_dark mx-3"}>
                             <Link className={""} title={""} href={""}>
                                 <Delivery />
-                                <p className={"text-[0.6rem] m-0 leading-5"}>order</p>
+                                {/*<p className={"text-[0.6rem] m-0 leading-5"}>order</p>*/}
                             </Link>
                         </div>
             </div>

@@ -21,22 +21,19 @@ export const ProductRequest = () =>{
                         height={300}
                     />
                     <div className={"absolute w-full h-full bg-[rgba(0,0,0,0.7)] text-my_light top-0"}>
-                        {/*<div className={"my-auto"}>*/}
-                        {/*    <p className={"text-center text-2xl font-normal"}>Easily Request for a Product...</p>*/}
-                        {/*</div>*/}
                     </div>
                 </div>
 
                 {/*second grid...... form*/}
-                <form className={"col-span-1 sm:col-span-4 h-64 bg-my_dark"}>
-                    <div className={"mx-2 my-6 text-center text-2xl sm:text-3xl font-bold"}>
+                <form className={" col-span-1 sm:col-span-4 h-64 bg-my_dark flex"}>
+                    <div className={"mx-auto my-6 text-center text-2xl sm:text-3xl font-bold"}>
                         <i>One Request, multiple Choices</i>
 
                         <div className={"text-lg font-normal text-start my-8 mx-4 "}>
                             {/*first form....*/}
-                            <div className={"bg-my_light inline-flex  rounded"}>
+                            <div className={"bg-my_light  rounded  "}>
                                 <input
-                                    className={"max-w-fit outline-none  mx-4 my-2 bg-my_light"}
+                                    className={"w-[90%] m-auto outline-none basis-[130px] shrink-0 grow mx-4 my-2 bg-my_light"}
                                     type={"text"}
                                     placeholder={"Product Name"}
                                 />
@@ -46,7 +43,7 @@ export const ProductRequest = () =>{
                             <div className={"flex justify-start gap-4 my-6"}>
                                 <div className={"bg-my_light inline-flex rounded"}>
                                     <input
-                                        className={"w-[10rem] outline-none  mx-4 my-2 bg-my_light"}
+                                        className={"w-[100%] sm:w-[10rem]  outline-none  mx-4 my-2 bg-my_light"}
                                         type={"number"}
                                         placeholder={"Quantity"}
                                         min={0}

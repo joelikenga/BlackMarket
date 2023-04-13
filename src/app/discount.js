@@ -2,7 +2,7 @@ import Link from "next/link";
 import {ChevronBack, ChevronFoward, Percent,} from "../../public/svgIcons";
 import Image from "next/image";
 
-export const BestOffers = () => {
+export const Discount = () => {
     const details = [
         {image:"https://images.unsplash.com/photo-1509963906410-fceef97f22f8?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80",name:"tomatoes",newPrice:23,oldPrice:38},
         {image:"https://images.unsplash.com/photo-1609942571926-f3fe26feab26?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=725&q=80",name:"axe black",newPrice:48,oldPrice:60},
