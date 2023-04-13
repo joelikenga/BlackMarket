@@ -13,16 +13,6 @@ const Slides = [
 ]
 export  const HeroSection = () => {
 
-
-    // const [y, Sety] = useState(0);
-    // const carousel = useRef();
-    //
-    // useEffect(() => {
-    //     Sety(carousel.current.scrollWidth - carousel.current.offsetWidth);
-    // },[]);
-    //
-    // console.table({carousel:carousel,yValue:y},);
-
     return(
       <main className={"bg-my_dark my-4 mt-14 sm:mt-20 lg:h-[25rem] lg:mt-0 "}>
           <div className={"flex justify-between grid-cols-2"}>

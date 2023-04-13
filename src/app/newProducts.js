@@ -11,12 +11,6 @@ export const NewProducts = () => {
   const sliderRef = useRef(null);
   const [slideWidth, SetslideWidth] = useState(300);
 
-  // useEffect(() => {
-  //     const containerWidth = sliderRef.current.offsetWidth;
-  //     const slideCount = sliderRef.current.children.length;
-  //     const slideWidth = containerWidth / slideCount;
-  //     SetslideWidth(slideWidth);
-  // },[])
 
   const slideLeft = () => {
     const scrollDistance = slideWidth;
@@ -24,7 +18,6 @@ export const NewProducts = () => {
         sliderRef.current.scrollBy({
           left: -scrollDistance,
           behavior: 'smooth',
-          block: 'nearest',
           duration: scrollDuration,
       })
       }
@@ -34,7 +27,6 @@ export const NewProducts = () => {
       sliderRef.current.scrollBy({
         left: scrollDistance,
         behavior: 'smooth',
-        block: 'nearest',
         duration: scrollDuration,
       });
   }
