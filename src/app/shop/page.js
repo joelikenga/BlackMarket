@@ -1,7 +1,9 @@
  export default function Shop () {
     return(
         <main>
-            hhhhh
+            <div>
+
+            </div>
         </main>
     );
 }

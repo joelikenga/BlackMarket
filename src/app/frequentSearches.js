@@ -20,7 +20,7 @@ export  const FrequentSearches = () => {
                   topCategories.map((details,index) => (
                       <Link href={details.href} key={index} className={"col-span-2 relative  rounded-xl overflow-hidden"}>
                           <Image
-                              className={"w-fit h-full object-cover"}
+                              className={"w-full h-full object-cover"}
                               src={details.image}
                               alt={details.alt}
                               width={200}

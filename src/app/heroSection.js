@@ -1,8 +1,6 @@
 "use client"
 import Image from "next/image";
-import {autoSlider} from "@/app/myAnimation";
-import {motion} from "framer-motion";
-import {useEffect, useRef, useState} from "react";
+
 
 
 const Slides = [
@@ -15,25 +13,23 @@ export  const HeroSection = () => {
 
     return(
       <main className={"bg-my_dark my-4 mt-14 sm:mt-20 lg:h-[25rem] lg:mt-0 "}>
-          <div className={"flex justify-between grid-cols-2"}>
+
+
+          <div className={"flex justify-around grid-cols-2 h-full"}>
 
           {/*    first grid section*/}
-              <div className={"col-span-1 h-[25rem] relative"}>
+              <div className={"col-span-1 relative "}>
 
-                  <div className={"absolute bottom-10 left-5 text-3xl border-my_yellow border-2 max-w-[20rem] text-center p-3"}>
-                      <h1>Just a text... for the creepy chickens</h1>
+                  <div className={" text-3xl border-my_yellow border-2  text-center p-3"}>
+                      <h1>New and pre-owned products</h1>
                   </div>
 
               </div>
 
           {/*    second grid section*/}
-              <div className={"relative col-span-1 h-[25rem] "}>
+              <div className={"relative col-span-1 border-my_yellow border-2"}>
 
-
-
-
-                      <div className={"absolute right-[5%] top-[2%]  w-[13rem] overflow-auto"}>
-
+                      <div className={" w-[13rem]"}>
                           <Image
                               className={" rounded-lg w-[50rem] h-full"}
                               src={"https://images.unsplash.com/photo-1605086998852-18371cfd9b2e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80"}
@@ -42,24 +38,13 @@ export  const HeroSection = () => {
                               height={200}
                               priority
                           />
-
                       </div>
 
-                      <div className={"absolute right-[5%] bottom-[2%]  w-[13rem] overflow-auto"}>
-
-                          <Image
-                              className={" rounded-lg w-[50rem] h-full"}
-                              src={"https://images.unsplash.com/photo-1605086998852-18371cfd9b2e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80"}
-                              alt={"images"}
-                              width={200}
-                              height={200}
-                              priority
-                          />
-
-                      </div>
                   </div>
 
           </div>
+
+
       </main>
   );
 }

@@ -3,9 +3,10 @@ import {SearchSection} from "@/app/searchSection";
 import {NewProducts} from "@/app/newProducts";
 import {ProductRequest} from "@/app/productRequest";
 import {FrequentSearches} from "@/app/frequentSearches";
-import {BestSeller} from "@/app/bestSeller";
-import {TopCategories} from "@/app/topCategories";
-import {Discount} from "@/app/discount";
+import {BestSeller, Drinks} from "@/app/drinks";
+import {FoodItems} from "@/app/foodItems";
+import {Gadgets} from "@/app/gadgets";
+import {FooterContent} from "@/app/footerContent";
 export const BodyContent = () => {
   return(
       <main className={
@@ -13,11 +14,12 @@ export const BodyContent = () => {
            <SearchSection/>
            <HeroSection />
            <NewProducts/>
-           <Discount/>
-           <BestSeller/>
+           <Gadgets/>
            <ProductRequest/>
-           <TopCategories/>
+           <FoodItems/>
+           <Drinks/>
            <FrequentSearches/>
+           <FooterContent/>
       </main>
   )
 }

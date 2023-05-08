@@ -1,6 +1,6 @@
 import  {Navigation} from "@/app/navigation";
 import {BodyContent} from "@/app/bodyContent";
-import {FooterContent} from "@/app/footerContent";
+import {FooterContent, MobileNav} from "@/app/mobileNav";
 
 export default function Home() {
   return (
@@ -10,7 +10,7 @@ export default function Home() {
             <BodyContent />
         </div>
         <div className={"sticky w-full bottom-0"}>
-            <FooterContent/>
+            <MobileNav/>
         </div>
     </main>
   )
