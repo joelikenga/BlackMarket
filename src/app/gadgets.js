@@ -1,6 +1,6 @@
 "use client"
 import Link from "next/link";
-import {ChevronBack, ChevronFoward, Location, People, Plus,} from "../../public/svgIcons";
+import {ChevronBack, ChevronFoward, People, Plus,} from "../../public/svgIcons";
 import Image from "next/image";
 import {useRef, useState} from "react";
 import myStyle from "@/app/page.module.css";
@@ -76,7 +76,7 @@ export const Gadgets = () => {
 
                                           <div className={"absolute top-2 right-2 rounded flex p-2 text-sm bg-my_dark_2 text-my_yellow"}>
                                               <People className={""}/>
-                                              <p translate={"no"}>{myDetails.location}</p>
+                                              <p >pre-owned</p>
                                           </div>
 
                                           <Image

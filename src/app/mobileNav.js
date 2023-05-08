@@ -12,7 +12,7 @@ export  const MobileNav = () => {
                             className={" text-my_dark mx-3"}>
                             <Link  className={""} title={""} href={""}>
                                 <HomeIcon />
-                                <p className={"text-[0.6rem] leading-5"}>Home</p>
+                                <p className={"text-[0.6rem] text-my_yellow leading-5"}>Home</p>
                             </Link>
                         </div>
 
