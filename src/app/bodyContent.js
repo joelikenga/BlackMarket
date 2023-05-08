@@ -3,7 +3,7 @@ import {SearchSection} from "@/app/searchSection";
 import {NewProducts} from "@/app/newProducts";
 import {ProductRequest} from "@/app/productRequest";
 import {FrequentSearches} from "@/app/frequentSearches";
-import {BestSeller, Drinks} from "@/app/drinks";
+import { Drinks} from "@/app/drinks";
 import {FoodItems} from "@/app/foodItems";
 import {Gadgets} from "@/app/gadgets";
 import {FooterContent} from "@/app/footerContent";

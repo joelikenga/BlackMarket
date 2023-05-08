@@ -1,9 +1,11 @@
- export default function Shop () {
-    return(
-        <main>
-            <div>
+import {ShopNavbar} from "@/app/shop/shopNavbar";
+import {InternalLinking} from "@/app/shop/internalLinking";
 
-            </div>
-        </main>
+export default function Shop () {
+    return(
+        <>
+         <ShopNavbar />
+            <InternalLinking />
+        </>
     );
 }
