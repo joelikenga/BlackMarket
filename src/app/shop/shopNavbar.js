@@ -5,7 +5,7 @@ export const ShopNavbar = () => {
 
     const navs = [
         {name:"home",link:"/"},
-        {name:"shop",link:"/",icon:<Market/>},
+        {name:"shop",link:"/shop",icon:<Market/>},
         {name:"sell products",link:"/"},
         {name:"track order",link:"/"},
         {name:"Contact us",link:"/"},
@@ -14,7 +14,7 @@ export const ShopNavbar = () => {
 
   return(
       <main>
-          <nav className={"flex  justify-between items-center bg-[rgba(16,24,32,0.3)] border-my_dark py-1 px-4 border-my_dark border-b"}>
+          <nav className={"flex  justify-between items-center bg-[rgba(16,24,32,0.5)] border-my_dark py-3 px-4 border-my_dark border-b"}>
 
           {/*  logo section*/}
             <div className={" my- w-[auto]"}>
@@ -28,10 +28,10 @@ export const ShopNavbar = () => {
                   {
                       navs.map( (navs, index )=> {
                         return(
-                          <div className={"m-2"} key={index} title={navs.name}>
-                              <Link className={"capitalize font-bold text-my_dark_2"} href={navs.link}>
-                                  <i className={"flex justify-center text-2xl text-my_yellow"}>{navs.icon}</i>
-                                  <span className={"text-md"}>{navs.name}</span>
+                          <div className={"m-2 text-lg"} key={index} title={navs.name}>
+                              <Link className={"capitalize flex items-center font-bold  text-my_dark_2"} href={navs.link}>
+                                  <i className={" text-2xl text-my_yellow mr-1"}>{navs.icon}</i>
+                                  <span className={"text-base mt-1 hover:text-my_yellow hover:duration-200"}>{navs.name}</span>
                               </Link>
                           </div>
                           )

@@ -1,7 +1,13 @@
+"use client"
 import {Cart, CoinStack, Delivery,  HomeIcon, Market,} from "../../public/svgIcons";
 import Link from "next/link";
-
+import {usePathname} from "next/navigation";
+// import {  } from 'next/router';
 export  const MobileNav = () => {
+
+    const  pathname = usePathname();
+    console.log(pathname);
+
     return(
     <main className={"sticky m-0 w-full z-20 relative "}>
 
@@ -10,16 +16,16 @@ export  const MobileNav = () => {
 
                         <div
                             className={" text-my_dark mx-3"}>
-                            <Link  className={""} title={""} href={""}>
+                            <Link  className={""} title={""} href={"/"}>
                                 <HomeIcon />
-                                <p className={"text-[0.6rem] text-my_yellow leading-5"}>Home</p>
+                                {pathname === "/"  && <p className={"text-[0.6rem] text-my_yellow leading-5"}>Home</p>}
                             </Link>
                         </div>
 
                         <div className={" text-my_dark mx-3"}>
                             <Link title={""} href={"/shop"}>
                                 <Market />
-                                {/*<p className={"text-[0.6rem] leading-5"}>Shop</p>*/}
+                                {pathname === "/shop"  && <p className={"text-[0.6rem] text-my_yellow leading-5"}>shop</p>}
 
                             </Link>
                         </div>
@@ -35,17 +41,17 @@ export  const MobileNav = () => {
                         </div>
 
                         <div className={" text-my_dark mx-3"}>
-                            <Link title={""} href={""}>
+                            <Link title={""} href={"/sell"}>
                                 <CoinStack />
-                                {/*<p className={"text-[0.6rem] leading-5"}>sell</p>*/}
+                                {pathname === "/sell"  && <p className={"text-[0.6rem] text-my_yellow leading-5"}>sell</p>}
 
                             </Link>
                         </div>
 
                         <div className={" text-my_dark mx-3"}>
-                            <Link className={""} title={""} href={""}>
+                            <Link className={""} title={""} href={"/contact"}>
                                 <Delivery />
-                                {/*<p className={"text-[0.6rem] m-0 leading-5"}>order</p>*/}
+                                {pathname === "/contact"  && <p className={"text-[0.6rem] text-my_yellow leading-5"}>contact</p>}
                             </Link>
                         </div>
             </div>
