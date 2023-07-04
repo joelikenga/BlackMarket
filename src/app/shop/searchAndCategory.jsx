@@ -8,17 +8,28 @@ import {
     Phone, Shirt, Television
 } from "../../../public/svgIcons";
 import Link from "next/link";
-import {useEffect, useState} from "react";
-import {data} from "autoprefixer";
-import {error} from "next/dist/build/output/log";
-import {ProductCard} from "@/app/shop/productCard";
+import {useContext, useEffect, useState} from "react";
+import {ProductContext} from "@/app/shop/ProductContext";
 
 export const SearchAndCategory = () =>{
 
+const categories = [
+    {name:"Groceries",icon:<Apple />, link:"../"},
+    {name:"Health & Beauty",icon:<Hairdryer />, link:"../"},
+    {name:"Home & office",icon:<HomeAndOffice />, link:"../"},
+    {name:"phones & tablets",icon:<Phone />, link:"../"},
+    {name:"Computing",icon:<Desktop />, link:"../"},
+    {name:"Electronics",icon:<Television />, link:"../"},
+    {name:"gaming",icon:<Gamepad />, link:"../"},
+    {name:"fashion",icon:<Shirt />, link:"../"},
+    {name:"sports",icon:<Gym />, link:"../"},
+    {name:"other categories",icon:<More />, link:"../"},
+]
+
   const url = 'https://fakestoreapi.com/products';
   const [data, setData] = useState([]);
-  const [filteredData, setFilteredData] = useState([]);
-  const [searchTerm, setSearchTerm] = useState('');
+  const { setFilteredData } = useContext(ProductContext);
+  const [searchTerm, setSearchTerm] = useState([]);
 
   useEffect(() => {
     fetch(url)
@@ -30,33 +41,25 @@ export const SearchAndCategory = () =>{
       .catch((error) => console.log(error));
   }, []);
 
-    const categories = [
-        {name:"Groceries",icon:<Apple />, link:"../"},
-        {name:"Health & Beauty",icon:<Hairdryer />, link:"../"},
-        {name:"Home & office",icon:<HomeAndOffice />, link:"../"},
-        {name:"phones & tablets",icon:<Phone />, link:"../"},
-        {name:"Computing",icon:<Desktop />, link:"../"},
-        {name:"Electronics",icon:<Television />, link:"../"},
-        {name:"gaming",icon:<Gamepad />, link:"../"},
-        {name:"fashion",icon:<Shirt />, link:"../"},
-        {name:"sports",icon:<Gym />, link:"../"},
-        {name:"other categories",icon:<More />, link:"../"},
-    ]
-
-
+  // console.log(filteredData);
 
   const handleChange = (e) => {
     setSearchTerm(e.target.value);
   };
 
   useEffect(() => {
+  if (searchTerm === '') {
+    setFilteredData(data);
+  } else {
     const filteredResults = data.filter((item) =>
-      item.title.toLowerCase().includes(searchTerm.toLowerCase())
+      item.title.toLowerCase().includes(
+        searchTerm.toString().toLowerCase()
+      )
     );
     setFilteredData(filteredResults);
-    console.log(filteredResults);
-  }, [searchTerm, data]);
-
+    // console.log(filteredData)
+  }
+}, [searchTerm, data]);
     return(
         <main className={"flex justify-between"}>
             <div className={"text-my_dark_2 static w-[20rem] "}>
@@ -94,7 +97,6 @@ export const SearchAndCategory = () =>{
                 </div>
 
             </div>
-
 
         </main>
     )

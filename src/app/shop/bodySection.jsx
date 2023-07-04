@@ -1,8 +1,12 @@
 import {SearchAndCategory} from "@/app/shop/searchAndCategory";
 import {ProductCard} from "@/app/shop/productCard";
+import { ProductContext } from '@/app/shop/ProductContext';
+import {useContext} from "react";
 
-export const BodySection = ({filteredData}) =>{
 
+export const BodySection = () =>{
+
+  const { filteredData } = useContext(ProductContext);
 
     return(
         <main className={""}>
@@ -19,7 +23,7 @@ export const BodySection = ({filteredData}) =>{
                 {/*body content section*/}
 
                     <div className={"mt-2 w-full overflow-y-scroll h-[80vh]"}>
-                     {filteredData && <ProductCard products={filteredData}/>}
+                     {filteredData && <ProductCard filteredData ={filteredData} />}
                     </div>
 
 

@@ -4,6 +4,7 @@ import {Breadcrumbs} from "@/app/shop/breadcrumbs";
 import {usePathname} from "next/navigation";
 import {MobileNav} from "@/app/mobileNav";
 import {BodySection} from "@/app/shop/bodySection";
+import {ProductProvider} from "@/app/shop/ProductContext"
 
 export default function Shop ({...pageProps})  {
 
@@ -13,12 +14,14 @@ export default function Shop ({...pageProps})  {
 
     return(
         <main value={pathname}>
-            <ShopNavbar />
-            <Breadcrumbs />
-            <BodySection />
-            <div className={"sticky w-full bottom-0"}>
-                <MobileNav {...pageProps}/>
-            </div>
+            <ProductProvider>
+                <ShopNavbar />
+                <Breadcrumbs />
+                <BodySection />
+                <div className={"sticky w-full bottom-0"}>
+                    <MobileNav {...pageProps}/>
+                </div>
+            </ProductProvider>
         </main>
     );
 }
