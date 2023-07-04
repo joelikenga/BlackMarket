@@ -14,7 +14,7 @@ export const ShopNavbar = () => {
 
   return(
       <main>
-          <nav className={"flex  justify-between items-center bg-[rgba(16,24,32,0.5)] border-my_dark py-3 px-4 border-my_dark border-b"}>
+          <nav className={"flex fixed w-full justify-between items-center bg-[rgba(16,24,32,0.5)]  py-3 px-4 border-my_dark border-b md:px-auto lg:px-16 xl:px-20 2xl:px-40"}>
 
           {/*  logo section*/}
             <div className={" my- w-[auto]"}>
@@ -40,7 +40,7 @@ export const ShopNavbar = () => {
               </div>
 
           {/*    cart and user section*/}
-              <div className={"inline flex gap-4 text-3xl"}>
+              <div className={"flex gap-4 text-3xl"}>
               {/*    cart*/}
                   <div className={"mr-3 gap-1 inline-flex relative items-center"}>
                       <Cart />

@@ -1,0 +1,31 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "name": "Nivea cream",
+      "price":200,
+      "quantity": 500,
+      "location": "magusa",
+      "description": "sfsfsfsvsfv vs",
+      "image1": "https://images.unsplash.com/photo-1558121556-2a39fc528338?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=464&q=80",
+      "product_image_2": "https://ng.jumia.is/unsafe/fit-in/300x300/filters:fill(white)/product/76/417118/1.jpg?0526",
+      "product_image_3": "https://ng.jumia.is/unsafe/fit-in/300x300/filters:fill(white)/product/76/417118/1.jpg?0526",
+      "category_id": 1,
+      "category_section_id": 1
+    },
+
+    {
+      "id": 2,
+      "name": "bananna cream",
+      "price":200,
+      "quantity": 500,
+      "location": "magusa",
+      "description": "sfsfsfsvsfv vs",
+      "image1": "https://images.unsplash.com/photo-1558121556-2a39fc528338?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=464&q=80",
+      "product_image_2": "https://ng.jumia.is/unsafe/fit-in/300x300/filters:fill(white)/product/76/417118/1.jpg?0526",
+      "product_image_3": "https://ng.jumia.is/unsafe/fit-in/300x300/filters:fill(white)/product/76/417118/1.jpg?0526",
+      "category_id": 1,
+      "category_section_id": 1
+    }
+  ]
+}

@@ -6,7 +6,7 @@ import {usePathname} from "next/navigation";
 export  const MobileNav = () => {
 
     const  pathname = usePathname();
-    console.log(pathname);
+    // console.log(pathname);
 
     return(
     <main className={"sticky m-0 w-full z-20 relative "}>

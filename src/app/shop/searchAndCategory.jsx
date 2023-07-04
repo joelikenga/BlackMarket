@@ -8,15 +8,34 @@ import {
     Phone, Shirt, Television
 } from "../../../public/svgIcons";
 import Link from "next/link";
+import {useEffect, useState} from "react";
+import {data} from "autoprefixer";
+import {error} from "next/dist/build/output/log";
+import {ProductCard} from "@/app/shop/productCard";
 
 export const SearchAndCategory = () =>{
 
+  const url = 'https://fakestoreapi.com/products';
+  const [data, setData] = useState([]);
+  const [filteredData, setFilteredData] = useState([]);
+  const [searchTerm, setSearchTerm] = useState('');
+
+  useEffect(() => {
+    fetch(url)
+      .then((response) => response.json())
+      .then((data) => {
+        setData(data);
+        setFilteredData(data);
+      })
+      .catch((error) => console.log(error));
+  }, []);
+
     const categories = [
-        {name:"Supermarket",icon:<Apple />, link:"../"},
+        {name:"Groceries",icon:<Apple />, link:"../"},
         {name:"Health & Beauty",icon:<Hairdryer />, link:"../"},
         {name:"Home & office",icon:<HomeAndOffice />, link:"../"},
         {name:"phones & tablets",icon:<Phone />, link:"../"},
-        {name:"Computing and Accessoories",icon:<Desktop />, link:"../"},
+        {name:"Computing",icon:<Desktop />, link:"../"},
         {name:"Electronics",icon:<Television />, link:"../"},
         {name:"gaming",icon:<Gamepad />, link:"../"},
         {name:"fashion",icon:<Shirt />, link:"../"},
@@ -24,13 +43,33 @@ export const SearchAndCategory = () =>{
         {name:"other categories",icon:<More />, link:"../"},
     ]
 
+
+
+  const handleChange = (e) => {
+    setSearchTerm(e.target.value);
+  };
+
+  useEffect(() => {
+    const filteredResults = data.filter((item) =>
+      item.title.toLowerCase().includes(searchTerm.toLowerCase())
+    );
+    setFilteredData(filteredResults);
+    console.log(filteredResults);
+  }, [searchTerm, data]);
+
     return(
-        <main className={""}>
-            <div className={"text-my_dark_2"}>
+        <main className={"flex justify-between"}>
+            <div className={"text-my_dark_2 static w-[20rem] "}>
 
                 {/*search query section*/}
                 <form className={"rounded border-my_dark border-2 m-2 relative flex items-center"} >
-                    <input className={"outline-0 border-0 w-full h-fit rounded p-1 font-semibold"} autoFocus placeholder={"search..."} type={"text"}/>
+                    <input
+                        className={"outline-0 border-0 w-full h-fit rounded p-1 font-semibold"}
+                        autoFocus
+                        placeholder={"search..."}
+                        type={"text"}
+                        onChange={(e) => handleChange(e)}
+                    />
                     <div className={" cursor-pointer m-[0.1rem] bg-my_dark_2 text-my_yellow p-[0.3rem] text-xl rounded"}>
                         <ArrowRight />
                     </div>
@@ -40,6 +79,7 @@ export const SearchAndCategory = () =>{
                 <div className={"m-4"}>
                     {
                         categories.map((category,index)=>{
+                            // console.log(index+1)
                             return(
                                 <Link href={"/"} key={index} className={"flex justify-between border-my_yellow bg-my_dark p-2 my-1.5 rounded text-xl hover:ml-2 hover:border-l-8 hover:duration-200 hover:ease-out"}>
                                     <div  className={"inline-flex gap-2 items-center capitalize"}>
@@ -54,6 +94,8 @@ export const SearchAndCategory = () =>{
                 </div>
 
             </div>
+
+
         </main>
     )
 }
