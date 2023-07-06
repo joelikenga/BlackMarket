@@ -2,9 +2,10 @@
 
 import {ArrowRight, Cart, Signout, Signin, UserIcon, Bar, Times, Magnifier,} from "../../public/svgIcons";
 import Link from "next/link";
-import {useState} from "react";
+import {useEffect, useState} from "react";
 import  {motion,AnimatePresence} from "framer-motion";
 import {opacityVariant, showSidebarVariant, clickVariant, } from "@/app/myAnimation";
+import {url} from "@/app/myApi";
 
 
 export  const SearchSection = () => {
@@ -14,6 +15,9 @@ export  const SearchSection = () => {
   const [sidebar, Setsidebar] = useState(false);
   const [closeModal, SetcloseModal] = useState(false);
   const [profile, Setprofile] = useState(false);
+  const [data,setData] = useState("");
+  const [filteredData, setFilteredData] = useState("");
+  const [searchWords,setSearchWords] = useState("");
 
   // functions
 
@@ -26,6 +30,33 @@ export  const SearchSection = () => {
     const profileClick = () => {
         Setprofile(!profile);
     }
+
+    const handleWordChange = (e) =>{
+        setSearchWords(e.target.value);
+    }
+
+    useEffect(() => {
+        fetch(url)
+            .then((response) => response.json())
+            .then((data) => {
+                setData(data);
+            })
+    },[]);
+
+
+    useEffect(() => {
+        if(!data){
+            return;
+        }
+        if (searchWords === ""){
+            setFilteredData("");
+        }else {
+            const filteredResults = data.filter((item) =>
+                item.title.toLowerCase().includes(searchWords.toLowerCase())
+            );
+            setFilteredData(filteredResults);
+        }
+    },[searchWords])
 
   return(
       <main className={"text-my_dark_2 fixed w-full top-0 bg-[rgba(16,24,32,0.5)] px-4 py-1  sm:py-3 sm:px-5 z-50 lg:sticky"}>
@@ -40,7 +71,7 @@ export  const SearchSection = () => {
               <div
                   onClick={()=>{sidebarClick()}}
                   style={{zIndex : sidebar ? 21 : 20}}
-                  className={"text-my_dark_2 text-my_dark_2 items-center block md:hidden"}>
+                  className={" text-my_dark_2 items-center block md:hidden"}>
                   {sidebar ? <Times className={"p-1 text-4xl rounded-full bg-my_dark_2 text-my_yellow "}/> : <Bar className={"p-1 text-4xl"}/>}
 
               </div>
@@ -93,7 +124,7 @@ export  const SearchSection = () => {
 
             {/*  logo name*/}
             <div className={"my-1 w-fit hidden md:block xl:hidden"}>
-                <div className={"flex justify-between block xl:hidden"}>
+                <div className={"flex justify-between xl:hidden"}>
                     <h3 className={"text-xl font-extrabold text-center"}>BlackMarket</h3>
                 </div>
             </div>
@@ -102,11 +133,11 @@ export  const SearchSection = () => {
 
             {/*quiick search button*/}
             <div>
-                <div className={" h-fit flex bg-my_light bg-my_dark rounded p-1 md:p-2 "}>
+                <div className={" h-fit flex bg-my_light  rounded p-1 md:p-2 "}>
 
                     <button
                         onClick={() => {SetcloseModal(true)}}
-                        className={" text-start h-[1.5rem] w-[42vw] ml-3 bg-my_light bg-my_dark outline-0 font-medium text-my_dark text-sm sm:h-fit sm:min-w-[36vw] md:w-fit md:text-md   lg:w-[44vw]"}
+                        className={" text-start h-[1.5rem] w-[42vw] ml-3 bg-my_light  outline-0 font-medium text-my_dark text-sm sm:h-fit sm:min-w-[36vw] md:w-fit md:text-md   lg:w-[44vw]"}
                     >
                         <div className={"mt-[.1rem] md:mt-[.2rem]"}>Quick search...</div>
                     </button>
@@ -129,17 +160,21 @@ export  const SearchSection = () => {
                                     initial={{opacity:0}}
                                     animate={{opacity:1}}
                                     transition={{duration: 0.1, delay:0.2}}
-                                    className={"relative p-4 w-[22rem] h-[70vh] rounded-lg bg-my_dark_2 right-0 left-0 absolute top-[2%]  mx-auto  sm:w-[30rem] md:w-[40rem] xl:ml-14"}>
+                                    className={"relative p-4 w-[22rem] h-[70vh] rounded-lg bg-my_dark_2 right-0 left-0  top-[2%]  mx-auto  sm:w-[30rem] md:w-[40rem] xl:ml-14"}>
 
                                     {/*modal header*/}
+                                    {/*input*/}
+
+
                                     <div className={"flex items-center gap-3 justify-between"}>
                                         <div className={"flex rounded-sm bg-my_dark p-1 text-my_dark_2"}>
-                                            <div className={"rounded-sm w-fit p-[.1rem]  rounded-sm text-2xl bg-my_yellow"}><Magnifier/></div>
+                                            <div className={" w-fit p-[.1rem]  rounded-sm text-2xl bg-my_yellow"}><Magnifier/></div>
                                             <input
                                                 autoFocus
                                                 className={"w-[13rem] font-medium  ml-2 outline-none bg-my_dark rounded sm:text-sm sm:w-[16rem] md:w-[22rem]"}
                                                 placeholder={"search all.."}
                                                 type={"search"}
+                                                onChange={handleWordChange}
                                             />
                                         </div>
 
@@ -155,7 +190,13 @@ export  const SearchSection = () => {
                                     {/* modal body*/}
 
                                     <div className={"overflow-y-auto rounded flex item-center bg-[rgba(255,255,255,0.1)] h-[85%] my-3 lg:h-[82%]"}>
-
+                                        {
+                                            filteredData.map((item) => (
+                                                <Link className={"rounded m-3 w-full bg-my_light "} href={""} key={item.id}>
+                                                    <p className={"font-bold text-sm "}>{item.title}</p>
+                                                </Link>
+                                            ))
+                                        }
                                     </div>
 
                                 </motion.div>

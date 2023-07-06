@@ -7,7 +7,6 @@ export const ShopNavbar = () => {
         {name:"home",link:"/"},
         {name:"shop",link:"/shop",icon:<Market/>},
         {name:"sell products",link:"/"},
-        {name:"track order",link:"/"},
         {name:"Contact us",link:"/"},
 
     ]

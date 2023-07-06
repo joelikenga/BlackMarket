@@ -1,5 +1,5 @@
 import {SearchAndCategory} from "@/app/shop/searchAndCategory";
-import {ProductCard} from "@/app/shop/productCard";
+import {Product} from "@/app/shop/product";
 import { ProductContext } from '@/app/shop/ProductContext';
 import {useContext} from "react";
 
@@ -23,7 +23,7 @@ export const BodySection = () =>{
                 {/*body content section*/}
 
                     <div className={"mt-2 w-full overflow-y-scroll h-[80vh]"}>
-                     {filteredData && <ProductCard filteredData ={filteredData} />}
+                     {filteredData && <Product filteredData ={filteredData} />}
                     </div>
 
 

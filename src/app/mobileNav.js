@@ -1,5 +1,5 @@
 "use client"
-import {Cart, CoinStack, Delivery,  HomeIcon, Market,} from "../../public/svgIcons";
+import {Cart, CoinStack, Delivery, Headset, HomeIcon, Market,} from "../../public/svgIcons";
 import Link from "next/link";
 import {usePathname} from "next/navigation";
 // import {  } from 'next/router';
@@ -50,7 +50,7 @@ export  const MobileNav = () => {
 
                         <div className={" text-my_dark mx-3"}>
                             <Link className={""} title={""} href={"/contact"}>
-                                <Delivery />
+                                <Headset />
                                 {pathname === "/contact"  && <p className={"text-[0.6rem] text-my_yellow leading-5"}>contact</p>}
                             </Link>
                         </div>
